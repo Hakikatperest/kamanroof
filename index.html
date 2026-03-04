@@ -39,29 +39,6 @@
         "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
       }
     }
-    // REPAIR SLIDER
-
-const track = document.querySelector('.repair-track');
-const leftBtn = document.querySelector('.repair-arrow.left');
-const rightBtn = document.querySelector('.repair-arrow.right');
-
-if(track && leftBtn && rightBtn){
-
-rightBtn.addEventListener('click', ()=>{
-track.scrollBy({
-left:300,
-behavior:'smooth'
-});
-});
-
-leftBtn.addEventListener('click', ()=>{
-track.scrollBy({
-left:-300,
-behavior:'smooth'
-});
-});
-
-}
   </script>
   
   <!-- GSAP for animations -->
@@ -1162,110 +1139,7 @@ behavior:'smooth'
       opacity: 1;
       transform: translate(0,0);
     }
-    /* PREMIUM TAMİR SÜRECİ */
-
-.repair-slider-section{
-background:#eef2f6;
-}
-
-.repair-slider{
-position:relative;
-display:flex;
-align-items:center;
-margin-top:50px;
-}
-
-.repair-track{
-display:flex;
-gap:30px;
-overflow:hidden;
-scroll-behavior:smooth;
-}
-
-.repair-card{
-min-width:280px;
-background:white;
-padding:30px;
-border-radius:14px;
-border:2px solid #e9ecf0;
-text-align:center;
-transition:.3s;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.repair-card:hover{
-transform:translateY(-8px);
-border-color:#c77734;
-box-shadow:0 20px 40px rgba(199,119,52,0.25);
-}
-
-.repair-card i{
-font-size:2rem;
-color:#c77734;
-margin:15px 0;
-}
-
-.repair-number{
-width:40px;
-height:40px;
-border-radius:50%;
-background:#c77734;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:700;
-margin:auto;
-}
-
-.repair-arrow{
-background:white;
-border:none;
-width:45px;
-height:45px;
-border-radius:50%;
-box-shadow:0 10px 20px rgba(0,0,0,0.15);
-cursor:pointer;
-font-size:18px;
-transition:.3s;
-}
-
-.repair-arrow:hover{
-background:#c77734;
-color:white;
-}
-
-.repair-arrow.left{
-margin-right:15px;
-}
-
-.repair-arrow.right{
-margin-left:15px;
-}
-
-.repair-cta{
-margin-top:40px;
-display:flex;
-justify-content:center;
-gap:20px;
-}
-
-@media(max-width:768px){
-
-.repair-track{
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-}
-
-.repair-card{
-scroll-snap-align:center;
-}
-
-.repair-arrow{
-display:none;
-}
-
-}
+    
     /* LAZY LOAD */
     .lazy {
       opacity: 0;
@@ -1379,62 +1253,44 @@ display:none;
     </div>
   </section>
 
-<section class="repair-slider-section">
-<div class="container">
+  <!-- ÇATI TAMİR ANİMASYONU BÖLÜMÜ -->
+  <section style="background: #eef2f6;">
+    <div class="container">
+      <h2 class="fade-left"><span>Çatı Tamiri</span> Nasıl Yapılır?</h2>
+      <div class="repair-animation fade-up">
+        <div class="animation-container">
+          <div class="animation-slide active" id="slide1">
+            <div class="animation-icon"><i class="fas fa-tools"></i></div>
+            <div class="animation-text">Eski kırık çatı tespit edilir</div>
+          </div>
+          <div class="animation-slide" id="slide2">
+            <div class="animation-icon"><i class="fas fa-user-hard-hat"></i></div>
+            <div class="animation-text">Usta ekip çalışmaya başlar</div>
+          </div>
+          <div class="animation-slide" id="slide3">
+            <div class="animation-icon"><i class="fas fa-trowel"></i></div>
+            <div class="animation-text">Yeni kiremitler yerleştirilir</div>
+          </div>
+          <div class="animation-slide" id="slide4">
+            <div class="animation-icon"><i class="fas fa-home"></i></div>
+            <div class="animation-text">Sağlam ve yeni çatı</div>
+          </div>
+        </div>
+        <div class="animation-progress">
+          <div class="progress-dot active" data-slide="0"></div>
+          <div class="progress-dot" data-slide="1"></div>
+          <div class="progress-dot" data-slide="2"></div>
+          <div class="progress-dot" data-slide="3"></div>
+        </div>
+        <div class="repair-subtitle">Uzman ekibimiz çatınızı aynı gün onarır.</div>
+        <div class="hero-buttons" style="justify-content: center;">
+          <a href="tel:+905374110030" class="btn btn-phone">📞 HEMEN ARA</a>
+          <a href="https://wa.me/905374110030" target="_blank" class="btn btn-wa">💬 WHATSAPP</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2 class="fade-left"><span>Çatı Tamiri</span> Nasıl Yapılır?</h2>
-
-<div class="repair-slider">
-
-<button class="repair-arrow left">
-<i class="fas fa-chevron-left"></i>
-</button>
-
-<div class="repair-track">
-
-<div class="repair-card">
-<div class="repair-number">1</div>
-<i class="fas fa-search"></i>
-<h3>Hasar Tespiti</h3>
-<p>Uzman ekibimiz çatıyı detaylı inceler ve sorunları belirler.</p>
-</div>
-
-<div class="repair-card">
-<div class="repair-number">2</div>
-<i class="fas fa-tools"></i>
-<h3>Hazırlık</h3>
-<p>Kırık kiremitler sökülür ve yalıtım zemini kontrol edilir.</p>
-</div>
-
-<div class="repair-card">
-<div class="repair-number">3</div>
-<i class="fas fa-layer-group"></i>
-<h3>Yeni Kaplama</h3>
-<p>Yeni kiremit veya metal çatı kaplaması uygulanır.</p>
-</div>
-
-<div class="repair-card">
-<div class="repair-number">4</div>
-<i class="fas fa-check-circle"></i>
-<h3>Son Kontrol</h3>
-<p>Tüm çatı kontrol edilir ve müşteriye teslim edilir.</p>
-</div>
-
-</div>
-
-<button class="repair-arrow right">
-<i class="fas fa-chevron-right"></i>
-</button>
-
-</div>
-
-<div class="repair-cta">
-<a href="tel:+905374110030" class="btn btn-phone">📞 HEMEN ARA</a>
-<a href="https://wa.me/905374110030" target="_blank" class="btn btn-wa">💬 WHATSAPP</a>
-</div>
-
-</div>
-</section>
   <!-- MÜŞTERİ YORUMLARI -->
   <section id="yorumlar">
     <div class="container">
@@ -1476,8 +1332,7 @@ display:none;
   </section>
 
   <!-- HİZMET ALANLARI -->
-  <section>
-<div class="container">
+    <div class="container">
       <h2 class="fade-left"><span>Ankara'nın Tüm</span> İlçelerinde Hizmet</h2>
       <div class="districts-grid">
         <a href="#" class="district-link fade-up">Çankaya</a>
@@ -2069,3 +1924,5 @@ el.classList.add('revealed');
   </script>
 </body>
 </html>
+
+bu sayfada çatı tamiri nasıl yapılır bölümünü daha premium şekilde göster şuanki çok uyumsuz duruyor
