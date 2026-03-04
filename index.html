@@ -1139,7 +1139,100 @@
       opacity: 1;
       transform: translate(0,0);
     }
-    
+    /* PREMIUM TAMİR SÜRECİ */
+
+.repair-section{
+background:#eef2f6;
+}
+
+.repair-steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-top:60px;
+position:relative;
+}
+
+.repair-steps::before{
+content:'';
+position:absolute;
+top:40px;
+left:5%;
+right:5%;
+height:3px;
+background:#c77734;
+opacity:.2;
+}
+
+.repair-step{
+text-align:center;
+position:relative;
+}
+
+.step-circle{
+width:60px;
+height:60px;
+border-radius:50%;
+background:#c77734;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+font-size:1.5rem;
+margin:0 auto 20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.step-card{
+background:white;
+padding:30px;
+border:2px solid #e9ecf0;
+transition:.3s;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.step-card i{
+font-size:2rem;
+color:#c77734;
+margin-bottom:15px;
+}
+
+.step-card h3{
+margin-bottom:10px;
+}
+
+.step-card p{
+color:#4b5563;
+font-size:0.9rem;
+}
+
+.step-card:hover{
+transform:translateY(-8px);
+border-color:#c77734;
+box-shadow:0 15px 35px rgba(199,119,52,0.25);
+}
+
+.repair-cta{
+margin-top:40px;
+text-align:center;
+display:flex;
+gap:20px;
+justify-content:center;
+}
+
+@media (max-width:768px){
+
+.repair-steps{
+grid-template-columns:1fr;
+}
+
+.repair-steps::before{
+display:none;
+}
+
+}
     /* LAZY LOAD */
     .lazy {
       opacity: 0;
@@ -1253,43 +1346,58 @@
     </div>
   </section>
 
-  <!-- ÇATI TAMİR ANİMASYONU BÖLÜMÜ -->
-  <section style="background: #eef2f6;">
-    <div class="container">
-      <h2 class="fade-left"><span>Çatı Tamiri</span> Nasıl Yapılır?</h2>
-      <div class="repair-animation fade-up">
-        <div class="animation-container">
-          <div class="animation-slide active" id="slide1">
-            <div class="animation-icon"><i class="fas fa-tools"></i></div>
-            <div class="animation-text">Eski kırık çatı tespit edilir</div>
-          </div>
-          <div class="animation-slide" id="slide2">
-            <div class="animation-icon"><i class="fas fa-user-hard-hat"></i></div>
-            <div class="animation-text">Usta ekip çalışmaya başlar</div>
-          </div>
-          <div class="animation-slide" id="slide3">
-            <div class="animation-icon"><i class="fas fa-trowel"></i></div>
-            <div class="animation-text">Yeni kiremitler yerleştirilir</div>
-          </div>
-          <div class="animation-slide" id="slide4">
-            <div class="animation-icon"><i class="fas fa-home"></i></div>
-            <div class="animation-text">Sağlam ve yeni çatı</div>
-          </div>
-        </div>
-        <div class="animation-progress">
-          <div class="progress-dot active" data-slide="0"></div>
-          <div class="progress-dot" data-slide="1"></div>
-          <div class="progress-dot" data-slide="2"></div>
-          <div class="progress-dot" data-slide="3"></div>
-        </div>
-        <div class="repair-subtitle">Uzman ekibimiz çatınızı aynı gün onarır.</div>
-        <div class="hero-buttons" style="justify-content: center;">
-          <a href="tel:+905374110030" class="btn btn-phone">📞 HEMEN ARA</a>
-          <a href="https://wa.me/905374110030" target="_blank" class="btn btn-wa">💬 WHATSAPP</a>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section class="repair-section">
+<div class="container">
+
+<h2 class="fade-left"><span>Çatı Tamiri</span> Nasıl Yapılır?</h2>
+
+<div class="repair-steps">
+
+<div class="repair-step fade-up">
+<div class="step-circle">1</div>
+<div class="step-card">
+<i class="fas fa-search"></i>
+<h3>Hasar Tespiti</h3>
+<p>Uzman ekibimiz çatıyı detaylı inceler ve akıntı veya kırık noktaları belirler.</p>
+</div>
+</div>
+
+<div class="repair-step fade-up">
+<div class="step-circle">2</div>
+<div class="step-card">
+<i class="fas fa-tools"></i>
+<h3>Onarım Hazırlığı</h3>
+<p>Kırık kiremitler sökülür, yalıtım ve zemin kontrol edilir.</p>
+</div>
+</div>
+
+<div class="repair-step fade-up">
+<div class="step-circle">3</div>
+<div class="step-card">
+<i class="fas fa-layer-group"></i>
+<h3>Yeni Malzeme Montajı</h3>
+<p>Yeni kiremitler veya metal kaplama profesyonel şekilde uygulanır.</p>
+</div>
+</div>
+
+<div class="repair-step fade-up">
+<div class="step-circle">4</div>
+<div class="step-card">
+<i class="fas fa-check-circle"></i>
+<h3>Kontrol ve Teslim</h3>
+<p>Çatı son kez kontrol edilir ve müşteriye güvenle teslim edilir.</p>
+</div>
+</div>
+
+</div>
+
+<div class="repair-cta">
+<a href="tel:+905374110030" class="btn btn-phone">📞 HEMEN ARA</a>
+<a href="https://wa.me/905374110030" target="_blank" class="btn btn-wa">💬 WHATSAPP</a>
+</div>
+
+</div>
+</section>
 
   <!-- MÜŞTERİ YORUMLARI -->
   <section id="yorumlar">
