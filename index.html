@@ -1779,8 +1779,8 @@
       const statNumbers = document.querySelectorAll('.stat-number');
       const statsSection = document.getElementById('istatistikler');
 let statsAnimated = false;      
-      function animateStats() {
-        if (animated) return;
+    function animateStats() {
+  if (statsAnimated) return;
         
         statNumbers.forEach(stat => {
           const target = parseInt(stat.getAttribute('data-target'));
@@ -1802,8 +1802,7 @@ let statsAnimated = false;
           }, 30);
         });
         
-        animated = true;
-      }
+statsAnimated = true;      }
       
       // Scroll ile tetikle
       window.addEventListener('scroll', () => {
