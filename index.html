@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çatı Tamiri | Kaman Roof Profesyonel Çatı Tamircisi</title>
+  <meta name="description" content="Kaman Roof ile profesyonel çatı tamiri, çatı onarımı, kiremit yenileme ve metal kaplama hizmetleri. Hemen arayın.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* RESET & KÖKLER */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f7fb;
+      color: #1f2a3a;
+      line-height: 1.5;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+    
+    h2 span {
+      color: #c77734;
+      border-bottom: 4px solid #c77734;
+      padding-bottom: 4px;
+      display: inline-block;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    section {
+      padding: 90px 0;
+    }
+    
+    /* BUTONLAR - Mavi ve Yeşil */
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 20px -8px rgba(0,0,0,0.3);
+      border-radius: 4px;
+    }
+    
+    .btn-phone {
+      background-color: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+    
+    .btn-phone:hover {
+      background-color: transparent;
+      color: #2563eb;
+      border-color: #2563eb;
+      box-shadow: 0 15px 25px -10px #2563eb;
+    }
+    
+    .btn-wa {
+      background-color: #25D366;
+      color: white;
+      border-color: #25D366;
+    }
+    
+    .btn-wa:hover {
+      background-color: transparent;
+      color: #25D366;
+      border-color: #25D366;
+      box-shadow: 0 15px 25px -10px #25D366;
+    }
+    
+    /* SABİT FLOATING BUTONLAR */
+    .float-buttons {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .float-btn {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      text-decoration: none;
+      transition: 0.25s ease;
+      animation: glow-pulse 2.5s infinite;
+      border: 2px solid rgba(255,255,255,0.8);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .float-btn.whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    
+    .float-btn.phone {
+      background: #2563eb;
+      color: white;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.15) translateY(-5px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+      animation: none;
+    }
+
+    @keyframes glow-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+    
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(31, 42, 58, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      border-bottom: 3px solid #c77734;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      color: #c77734;
+      background: rgba(255,255,255,0.15);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 2px solid #c77734;
+    }
+
+    .logo-text {
+      color: white;
+      font-weight: 800;
+      font-size: 1.4rem;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-text span {
+      color: #c77734;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: block;
+      letter-spacing: 1px;
+    }
+
+    /* Hamburger menü butonu */
+    .menu-toggle {
+      background: transparent;
+      border: 2px solid #c77734;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      transition: 0.3s;
+      z-index: 1010;
+    }
+    
+    .menu-toggle:hover {
+      background: #c77734;
+      transform: rotate(90deg);
+    }
+
+    /* Premium açılır menü */
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 320px;
+      height: 100vh;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(15px);
+      padding: 100px 30px 40px;
+      box-shadow: -10px 0 40px rgba(0,0,0,0.2);
+      transition: right 0.4s ease-in-out;
+      z-index: 1005;
+      border-left: 4px solid #c77734;
+    }
+
+    .nav-menu.active {
+      right: 0;
+    }
+
+    .nav-menu ul {
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin: 30px 0;
+    }
+
+    .nav-menu a {
+      color: #1f2a3a;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: 0.3s;
+      padding: 8px 15px;
+      border-radius: 50px;
+    }
+
+    .nav-menu a:hover {
+      color: #c77734;
+      background: rgba(199,119,52,0.1);
+      transform: translateX(10px);
+    }
+
+    .nav-menu i {
+      color: #c77734;
+      width: 30px;
+      font-size: 1.4rem;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1002;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* HERO - GÖRSEL GÜNCELLENDİ */
+    .hero {
+      padding-top: 80px;
+      background: linear-gradient(95deg, #0b1a2a 0%, #1f2a3a 80%);
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      border-bottom: 6px solid #c77734;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 50%;
+      background: url('https://www.kamanroof.com/images/cati-tamircisi0.webp') right center/cover no-repeat;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    
+    .hero h1 span {
+      color: #c77734;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      max-width: 550px;
+      border-left: 5px solid #c77734;
+      padding-left: 20px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    /* BALON */
+    .floating-ballon {
+      position: fixed;
+      bottom: 120px;
+      right: 30px;
+      background: white;
+      padding: 20px 25px;
+      border-radius: 60px 60px 60px 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 998;
+      border: 3px solid #c77734;
+      transform: translateX(150%);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      max-width: 400px;
+    }
+
+    .floating-ballon.show {
+      transform: translateX(0);
+    }
+
+    .ballon-text {
+      font-weight: 600;
+      color: #1f2a3a;
+      font-size: 1.1rem;
+    }
+
+    .ballon-btn {
+      background: #2563eb;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: 0.3s;
+      flex-shrink: 0;
+    }
+    
+    .ballon-btn:hover {
+      transform: scale(1.1);
+      background: #1f2a3a;
+    }
+    
+    /* HİZMETLER */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .service-card {
+      background: white;
+      padding: 30px 20px;
+      border: 2px solid #e9ecf0;
+      transition: all 0.2s ease;
+      text-align: center;
+      box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
+    }
+    
+    .service-card:hover {
+      border-color: #c77734;
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px -12px rgba(199,119,52,0.3);
+    }
+    
+    .service-icon {
+      font-size: 3.8rem;
+      margin-bottom: 15px;
+      color: #1f2a3a;
+    }
+    
+    .service-card h3 {
+      font-size: 1.35rem;
+      color: #1f2a3a;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    /* NEDEN BİZ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 2px solid #1f2a3a;
+      background: white;
+    }
+    
+    .why-item {
+      padding: 35px 20px;
+      text-align: center;
+      border-right: 2px solid #e9ecf0;
+      transition: 0.2s;
+    }
+    
+    .why-item:last-child { border-right: none; }
+    
+    .why-item:hover {
+      background: #1f2a3a;
+    }
+    
+    .why-item:hover .icon, .why-item:hover h4, .why-item:hover p {
+      color: white;
+    }
+    
+    .why-item .icon {
+      font-size: 3rem;
+      color: #c77734;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .why-item h4 {
+      font-size: 1.4rem;
+      margin: 10px 0 5px;
+      color: #1f2a3a;
+    }
+    
+    .why-item p {
+      color: #4a5560;
+    }
+    
+    /* SEO İÇERİK */
+    .seo-content {
+      background: #eef2f6;
+      border-top: 6px solid #c77734;
+      border-bottom: 6px solid #1f2a3a;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    
+    .content-text h3 {
+      font-size: 1.8rem;
+      color: #1f2a3a;
+      margin: 40px 0 20px 0;
+    }
+    
+    .content-text h3:first-of-type { margin-top: 0; }
+    
+    .content-text p {
+      margin-bottom: 20px;
+      color: #1f2a3a;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    
+    .content-text strong { color: #c77734; }
+    
+    /* REFERANSLAR - GÖRSEL URL'LERİ GÜNCELLENDİ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    
+    .gallery-item {
+      border: 3px solid #1f2a3a;
+      transition: 0.2s;
+      aspect-ratio: 1/0.9;
+      overflow: hidden;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover {
+      border-color: #c77734;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* İLETİŞİM */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      background: white;
+      border: 3px solid #1f2a3a;
+    }
+    
+    .contact-detail {
+      flex: 1 1 300px;
+      padding: 45px 40px;
+      background: #1f2a3a;
+      color: white;
+    }
+    
+    .contact-detail h3 {
+      color: #c77734;
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+    
+    .contact-detail p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    .contact-detail a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #c77734;
+    }
+    
+    .contact-detail i { color: #c77734; margin-right: 10px; font-style: normal; }
+    
+    .map-placeholder {
+      flex: 2 1 400px;
+      background: #d9e0e8;
+      min-height: 320px;
+      border-left: 3px solid #1f2a3a;
+    }
+    
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: grayscale(0.2);
+    }
+    
+    footer {
+      background: #0f1a24;
+      color: #a0b3c5;
+      text-align: center;
+      padding: 30px;
+      border-top: 5px solid #c77734;
+    }
+    
+    /* SCROLL ANIMATION */
+    .fade-up, .fade-left, .fade-right {
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.9, 0.1, 1);
+    }
+    .fade-up { transform: translateY(50px); }
+    .fade-left { transform: translateX(-50px); }
+    .fade-right { transform: translateX(50px); }
+    .revealed {
+      opacity: 1;
+      transform: translate(0,0);
+    }
+    
+    /* LAZY LOAD */
+    .lazy {
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .lazy.loaded {
+      opacity: 1;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      h2 { font-size: 2rem; }
+      .why-grid { grid-template-columns: repeat(2,1fr); border: none; }
+      .why-item { border: 2px solid #1f2a3a; margin: -1px 0 0 -1px; }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    
+    @media (max-width: 800px) {
+      .hero h1 { font-size: 3rem; }
+      .content-grid { grid-template-columns: 1fr; }
+      .hero::after { display: none; }
+    }
+    
+    @media (max-width: 500px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .why-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .float-buttons { bottom: 15px; right: 15px; }
+      .float-btn { width: 52px; height: 52px; font-size: 26px; }
+      .contact-detail { padding: 30px 20px; }
+      .logo-text { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-home"></i></div>
+        <div class="logo-text">KAMAN ROOF <span>Çatı Sistemleri</span></div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Premium açılır menü -->
+  <div class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="#hero"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+      <li><a href="#hizmetler"><i class="fas fa-tools"></i> Hizmetler</a></li>
+      <li><a href="#neden-biz"><i class="fas fa-thumbs-up"></i> Neden Biz</a></li>
+      <li><a href="#seo-blog"><i class="fas fa-newspaper"></i> Blog</a></li>
+      <li><a href="#referanslar"><i class="fas fa-images"></i> Referanslar</a></li>
+      <li><a href="#iletisim"><i class="fas fa-envelope"></i> İletişim</a></li>
+      <li><a href="https://www.instagram.com/kamanroof/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+    </ul>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- SABİT FLOATING BUTONLAR -->
+  <div class="float-buttons">
+    <a href="https://wa.me/905374110030" class="float-btn whatsapp" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+905374110030" class="float-btn phone" aria-label="Telefon">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+
+  <!-- BALON -->
+  <div class="floating-ballon" id="floatingBallon">
+    <div class="ballon-text">
+      <i class="fas fa-tools" style="color: #c77734; margin-right: 8px;"></i>
+      Fiyat teklifi için uzman ekibimizi arayın!
+    </div>
+    <a href="tel:+905374110030" class="ballon-btn">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+
+  <!-- HERO - Görsel: cati-tamircisi0.webp -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <h1 class="fade-up"><span>Çatı Tamiri</span> <br>ve Onarımında <br>Uzman İsim</h1>
+      <p class="fade-up">Kaman Roof ile hızlı, güvenilir ve uzun ömürlü çatı çözümleri. 15 yıllık tecrübe, endüstriyel kalite.</p>
+      <div class="hero-buttons fade-up">
+        <a href="tel:+905374110030" class="btn btn-phone">📞 HEMEN ARA</a>
+        <a href="https://wa.me/905374110030" target="_blank" class="btn btn-wa">💬 WHATSAPP</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HİZMETLER -->
+  <section class="container" id="hizmetler">
+    <h2 class="fade-left"><span>Uzmanlık</span> Alanlarımız</h2>
+    <div class="services-grid">
+      <div class="service-card fade-up"><div class="service-icon">🏗️</div><h3>Çatı Tamiri</h3><p>Her tür çatıda profesyonel tamir, akıtma ve izolasyon.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">🧱</div><h3>Kiremit Yenileme</h3><p>Kırık kiremit değişimi, çatı tamircisi ekibiyle estetik.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">🔄</div><h3>Çatı Aktarma</h3><p>Komple yenileme, çatı aktarma ve güçlendirme.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">🔧</div><h3>Yağmur Oluğu</h3><p>Oluk tamiri, değişimi, tıkanıklık açma.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">⚙️</div><h3>Metal Kaplama</h3><p>Dayanıklı metal çatı kaplama ve onarım.</p></div>
+    </div>
+  </section>
+
+  <!-- NEDEN BİZ -->
+  <section style="background: #f4f7fb;" id="neden-biz">
+    <div class="container">
+      <h2 class="fade-right"><span>Neden</span> Kaman Roof?</h2>
+      <div class="why-grid">
+        <div class="why-item fade-up"><span class="icon">👷‍♂️</span><h4>Profesyonel Ekip</h4><p>Çatı ustası kadromuz sertifikalı, deneyimli.</p></div>
+        <div class="why-item fade-up"><span class="icon">🏅</span><h4>Kaliteli Malzeme</h4><p>Birinci sınıf kiremit, membran, metal.</p></div>
+        <div class="why-item fade-up"><span class="icon">💰</span><h4>Uygun Fiyat</h4><p>Şeffaf teklif, peşin fiyatına taksit.</p></div>
+        <div class="why-item fade-up"><span class="icon">⏱️</span><h4>Hızlı Servis</h4><p>Acil çatı onarımında aynı gün müdahale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO İÇERİK -->
+  <section class="seo-content" id="seo-blog">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-text fade-left">
+          <h2>Çatı Tamiri Nedir?</h2>
+          <p><strong>Çatı tamiri</strong>, binanızın çatısında oluşan hasarların (kırık kiremit, akma, çürüme, göçme riski) uzman ekipler tarafından onarılmasıdır. Kaman Roof olarak Ankara genelinde profesyonel <strong>çatı tamircisi</strong> hizmeti sunuyoruz. Özellikle kış sonrası kar erimesiyle ortaya çıkan sorunlar, fırtına hasarları, yanlış uygulamalar nedeniyle oluşan akıntılar … Tüm bu durumlarda hızlı ve kalıcı çözüm üretiyoruz. <strong>Çatı onarımı</strong> sadece görsel değil, aynı zamanda yapı güvenliği için şarttır. Çatınızın ömrünü uzatmak, enerji kaybını önlemek için düzenli bakım ve onarım yaptırmalısınız. Firmamız 15 yıldır bu sektörde sayısız konut, site, fabrika çatısında başarılı işlere imza atmıştır.</p>
+          
+          <h2>Çatı Tamiri Ne Zaman Yapılmalı?</h2>
+          <p>Tavanınızda su lekesi, duvarlarda nem, dış cephede çatlaklar fark ediyorsanız vakit kaybetmeden <strong>çatı tamircisi</strong> çağırmalısınız. Özellikle şiddetli yağmur sonrası aktmalar, kar erimesi dönemleri kritiktir. Çatınızın periyodik kontrolünü yılda en az iki kez yaptırmanızı öneririz. Kaman Roof olarak acil durumlarda 7/24 hizmet veriyor, aynı gün keşif yapıyoruz. <strong>Çatı onarımı</strong> ihmal edilirse kirişlerde çürüme, yalıtımın bozulması, hatta göçme riski doğar. Küçük bir kiremit kayması bile büyük hasara yol açabilir. Bu yüzden uzman bir <strong>çatı ustası</strong> gözetiminde düzenli bakım şart.</p>
+          
+          <h2>Profesyonel Çatı Tamircisi Nasıl Seçilir?</h2>
+          <p>İnternette "çatı tamircisi" ararken birçok seçenek çıkar. Ancak doğru seçim için referanslar, kullanılan malzeme kalitesi, iş bitirme süresi ve fiyat şeffaflığı önemlidir. Kaman Roof, tüm bu kriterlerde notunu fazlasıyla geçiyor. Ekibimizdeki <strong>çatı ustası</strong> kadrosu yılların deneyimine sahip, sürekli eğitim alır. Ayrıca iş güvenliği ekipmanları, sigorta, yasal izinler konusunda titiziz. <strong>Çatı tamir hizmeti</strong> alırken mutlaka firmanın geçmiş işlerini, kullandığı markaları sorgulayın. Biz size referanslarımızı gururla sunar, şantiye ziyareti imkanı tanırız. </p>
+          
+          <h2>Çatı Tamiri Fiyatları</h2>
+          <p><strong>Çatı tamiri fiyatları</strong> hasar durumuna, çatı tipine, malzeme kalitesine göre değişir. Kiremit değişimi, aktarma, yalıtım yenileme gibi işlemler metrekarese farklılık gösterir. Kaman Roof'te uygun fiyat politikamızla kaliteden ödün vermiyoruz. Keşif sonrası detaylı malzeli teklif sunuyor, ek masraf çıkarmıyoruz. <strong>Çatı aktarma</strong> gibi büyük projelerde uzun vadeli finansman seçenekleri de sağlıyoruz. Unutmayın en pahalı onarım, ucuz ve kalitesiz malzeme ile yapılandır. Bize güvenin, çatınız uzun yıllar sorun çıkarmasın.</p>
+        </div>
+        <div class="content-text fade-right">
+          <p style="background: white; padding: 30px; border-left: 8px solid #c77734; box-shadow: 0 10px 20px rgba(0,0,0,0.05);"><strong>Çatı tamiri</strong> sektöründe marka olmuş Kaman Roof, <strong>çatı tamircisi</strong> arayan her müşterisine özel çözümler sunar. Kullanılan malzemeler: birinci sınıf kiremit (Braman, Wienerberger), membran (Onduline, Bauder), metal kaplama (sac, trapez). Ekibimiz daha önce yüzlerce çatıda <strong>çatı onarımı</strong>, yenileme yaptı. Siz de çatınızı emanet edeceğiniz <strong>çatı ustası</strong> arıyorsanız, doğru adrestesiniz. Acil durumlarda arayın, aynı gün keşif yapalım. Unutmayın, çatı sadece evin örtüsü değil, güvencenizdir. Fiyat teklifi için iletişime geçin, size özel uygun fiyat avantajları sunalım. Ankara genelinde tüm ilçelerde hizmetinizdeyiz: Çankaya, Yenimahalle, Keçiören, Mamak, Sincan, Etimesgut… Ayrıca <strong>çatı aktarma</strong> ve komple yenileme projelerinde de referanslarımızla fark yaratıyoruz. Daha önce yaptığımız işleri görmek için galerimizi inceleyin. Profesyonel çatı tamiri için hemen arayın.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERANSLAR - Görseller: cati-tamircisi1.webp, 2.webp, 3.webp, 4.webp -->
+  <section class="container" id="referanslar">
+    <h2 class="fade-up"><span>Son</span> Projeler</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi1.webp" alt="çatı tamiri" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi2.webp" alt="kiremit yenileme" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi3.webp" alt="çatı aktarma" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi4.webp" alt="metal çatı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section style="background: #f4f7fb;" id="iletisim">
+    <div class="container">
+      <h2 class="fade-left"><span>İletişim</span></h2>
+      <div class="contact-info fade-up">
+        <div class="contact-detail">
+          <h3>Ercan KAMAN</h3>
+          <p><i>📞</i> <a href="tel:+905374110030">0537 411 00 30</a></p>
+          <p><i>✉️</i> <a href="mailto:ercankaman3838@gmail.com">ercankaman3838@gmail.com</a></p>
+          <p><i>📍</i> Yeni Mahalle / Karşıyaka / Ankara</p>
+          <p><i>📷</i> <a href="https://www.instagram.com/kamanroof" target="_blank">@kamanroof</a></p>
+          <p><i>🌐</i> <a href="https://www.kamanroof.com" target="_blank">kamanroof.com</a></p>
+        </div>
+        <div class="map-placeholder">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.784089104711!2d32.82546931581175!3d39.92589047942448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f55b9b1b1b1%3A0x6e8c5d6c6e8c5d6c!2sKar%C5%9F%C4%B1yaka%2C%20Ankara!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Kaman Roof Çatı Sistemleri | Tüm hakları saklıdır. Profesyonel Çatı Tamiri ve Onarımı</p>
+  </footer>
+
+  <script>
+    (function() {
+      // Menü işlemleri
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      const overlay = document.getElementById('overlay');
+
+      function openMenu() {
+        navMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.contains('active') ? closeMenu() : openMenu();
+      });
+
+      overlay.addEventListener('click', closeMenu);
+      
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // BALON - Sayfa ortasına gelince açıl
+      const ballon = document.getElementById('floatingBallon');
+      let ballonShown = false;
+      
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.body.scrollHeight;
+        
+        // Sayfanın ilk 1/4'ü geçildiyse ve balon daha gösterilmediyse
+        if (scrollPosition > documentHeight * 0.25 && !ballonShown) {
+          ballon.classList.add('show');
+          ballonShown = true;
+        }
+      });
+
+      // LAZY LOAD - Görseller yüklendikten sonra göster
+      const lazyImages = document.querySelectorAll('img.lazy');
+      if ('IntersectionObserver' in window) {
+        let observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              let img = e.target;
+              img.src = img.dataset.src;
+              img.classList.add('loaded');
+              observer.unobserve(img);
+            }
+          });
+        }, { rootMargin: "200px" });
+        lazyImages.forEach(img => observer.observe(img));
+      } else {
+        lazyImages.forEach(img => { img.src = img.dataset.src; img.classList.add('loaded'); });
+      }
+
+      // SCROLL ANIMATION
+      const animated = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+      const animObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => e.isIntersecting && e.target.classList.add('revealed'));
+      }, { threshold: 0.2, rootMargin: "0px 0px -40px 0px" });
+      animated.forEach(el => animObs.observe(el));
+      
+      window.addEventListener('load', () => {
+        animated.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 80) el.classList.add('revealed');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
