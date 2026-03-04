@@ -1242,6 +1242,65 @@
     .lazy.loaded {
       opacity: 1;
     }
+
+    /* YENİ MODERN BUTON - Çatınız mı akıyor? Hemen arayın butonu */
+    .modern-cta-button-container {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+    
+    .btn-modern-acil {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      background: linear-gradient(145deg, #c77734, #b55e1f);
+      color: white;
+      font-size: 2rem;
+      font-weight: 800;
+      padding: 20px 50px;
+      border-radius: 80px;
+      text-decoration: none;
+      box-shadow: 0 20px 30px -8px rgba(199, 119, 52, 0.5);
+      border: 3px solid rgba(255,255,255,0.3);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      backdrop-filter: blur(5px);
+      border: 2px solid white;
+    }
+    
+    .btn-modern-acil i {
+      font-size: 2.5rem;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    }
+    
+    .btn-modern-acil:hover {
+      background: linear-gradient(145deg, #b55e1f, #c77734);
+      transform: scale(1.08) translateY(-5px);
+      box-shadow: 0 30px 40px -8px #c77734;
+      border-color: #ffddbb;
+    }
+    
+    @media (max-width: 768px) {
+      .btn-modern-acil {
+        font-size: 1.5rem;
+        padding: 16px 30px;
+        gap: 10px;
+      }
+      .btn-modern-acil i {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .btn-modern-acil {
+        font-size: 1.2rem;
+        padding: 14px 20px;
+        width: 100%;
+      }
+    }
   </style>
   
   <!-- Schema Markup -->
@@ -1291,7 +1350,6 @@
       <li><a href="#makaleler"><i class="fas fa-newspaper"></i> Çatı Rehberi</a></li>
       <li><a href="#yorumlar"><i class="fas fa-star"></i> Yorumlar</a></li>
       <li><a href="#referanslar"><i class="fas fa-images"></i> Son Projeler</a></li>
-      <li><a href="#cta-acil"><i class="fas fa-phone-alt"></i> Hemen Ara</a></li>
       <li><a href="#ilceler"><i class="fas fa-map-marked-alt"></i> Hizmet Bölgeleri</a></li>
       <li><a href="#neden"><i class="fas fa-check-circle"></i> Neden Biz</a></li>
       <li><a href="#surec"><i class="fas fa-clock"></i> Süreç</a></li>
@@ -1450,6 +1508,15 @@
           </div>
         </div>
       </div>
+
+      <!-- TAŞINAN VE YENİLENEN BUTON: Çatınız mı akıyor? Hemen bizi arayın! (modern, sayfa uyumlu) -->
+      <div class="modern-cta-button-container fade-up">
+        <a href="tel:+905374110030" class="btn-modern-acil">
+          <i class="fas fa-tools"></i> Çatınız mı akıyor? Hemen Arayın!
+          <i class="fas fa-phone-alt"></i>
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -1491,18 +1558,19 @@
     </div>
   </section>
 
-  <!-- 6. GÜÇLÜ CTA BÖLÜMÜ (Çatınız mı akıyor? Hemen arayın) - SADECE BÜYÜK BUTON KALDI -->
+  <!-- 6. GÜÇLÜ CTA BÖLÜMÜ (eski yeri, ama buton taşındı) - İsterseniz burası tamamen kaldırılabilir, ancak kod bütünlüğü için bırakıyorum. Artık kullanılmıyor -->
+  <!--
   <section class="cta-section" id="cta-acil">
     <div class="container">
       <div class="cta-content">
         <h2 class="fade-up"><span>Çatınız mı akıyor?</span> Hemen bizi arayın!</h2>
-        <!-- Sadece büyük telefon butonu, diğer iki buton silindi -->
         <a href="tel:+905374110030" class="cta-big-phone fade-up">
           <i class="fas fa-phone-alt"></i> 0537 411 00 30
         </a>
       </div>
     </div>
   </section>
+  -->
 
   <!-- 7. ANKARA'NIN TÜM İLÇELERİNDE HİZMET -->
   <section id="ilceler">
