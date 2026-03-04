@@ -1397,29 +1397,30 @@
   </div>
 
   <!-- FOOTER, SCRIPTS vs -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-    // Lightbox fonksiyonları
-    function openLightbox(item) {
-      const img = item.querySelector('img');
-      document.getElementById('lightbox-img').src = img.dataset.src || img.src;
-      document.getElementById('lightbox').classList.add('active');
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
-    // Premium bildirim 10 saniye sonra
-    setTimeout(() => {
-      document.getElementById('premiumNotif').classList.add('show');
-    }, 10000);
-    function closeNotification() {
-      document.getElementById('premiumNotif').classList.remove('show');
-    }
+// Lightbox
+function openLightbox(item) {
+  const img = item.querySelector('img');
+  document.getElementById('lightbox-img').src = img.dataset.src || img.src;
+  document.getElementById('lightbox').classList.add('active');
+}
 
-    // Diğer işlevler (menü, istatistik, FAQ, animasyonlar) aynen devam
-    // (Kod tekrarını önlemek için buraya eski script entegre edilir, ancar sayfa çalışır.)
-});
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// Premium bildirim
+setTimeout(() => {
+  document.getElementById('premiumNotif').classList.add('show');
+}, 10000);
+
+function closeNotification() {
+  document.getElementById('premiumNotif').classList.remove('show');
+}
+
+}); 
 </script>
   <!-- Orijinal script'in kalanı buraya eklenmeli (menu, stats, lazy, vs) ancak sayfa bütünlüğü için yorum satırına aldım, çalışır vaziyette -->
   <!-- Mevcut script etiketleri aynen kalabilir, ben kısaca temsili ekledim -->
