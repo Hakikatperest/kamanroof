@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Ankara Çatı Ustası | Kaman Roof Profesyonel Çatı Tamircisi</title>
   <meta name="description" content="Ankara çatı ustası Kaman Roof ile kiremit yenileme, metal kaplama, yağmur oluğu ve çatı aktarma hizmetleri. Yeni Mahalle'de uzman ekip.">
   
@@ -22,6 +22,8 @@
     
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
     }
     
     body {
@@ -29,6 +31,16 @@
       background-color: #f4f7fb;
       color: #1f2a3a;
       line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+      padding-top: 80px; /* Header yüksekliği kadar padding */
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding-top: 70px; /* Mobilde header yüksekliği */
+      }
     }
     
     h1, h2, h3 {
@@ -43,6 +55,13 @@
       letter-spacing: -0.02em;
     }
     
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
     h2 span {
       color: #c77734;
       border-bottom: 4px solid #c77734;
@@ -54,10 +73,26 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 24px;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
     }
     
     section {
       padding: 90px 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
     }
     
     /* BUTONLAR */
@@ -73,6 +108,15 @@
       letter-spacing: 0.5px;
       box-shadow: 0 10px 20px -8px rgba(0,0,0,0.3);
       border-radius: 4px;
+    }
+    
+    @media (max-width: 480px) {
+      .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+      }
     }
     
     .btn-phone {
@@ -112,6 +156,14 @@
       gap: 16px;
     }
 
+    @media (max-width: 768px) {
+      .float-buttons {
+        bottom: 20px;
+        right: 20px;
+        gap: 12px;
+      }
+    }
+
     .float-btn {
       width: 65px;
       height: 65px;
@@ -125,6 +177,14 @@
       animation: glow-pulse 2.5s infinite;
       border: 2px solid rgba(255,255,255,0.8);
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .float-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+      }
     }
 
     .float-btn.whatsapp {
@@ -149,18 +209,18 @@
       100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
     }
     
-    /* HEADER */
+    /* HEADER - YENİ TASARIM - SABİT */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(31, 42, 58, 0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       transition: 0.3s;
       border-bottom: 3px solid #c77734;
+      transform: translateY(0); /* Her zaman görünür */
     }
 
     .header-container {
@@ -170,33 +230,47 @@
       padding: 12px 30px;
       max-width: 1400px;
       margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 10px 16px;
+      }
     }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
     }
 
-    .logo-icon {
-      font-size: 2rem;
-      color: #c77734;
-      background: rgba(255,255,255,0.15);
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      border: 2px solid #c77734;
+    @media (max-width: 480px) {
+      .logo {
+        gap: 8px;
+      }
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 40px;
+      }
     }
 
     .logo-text {
-      color: white;
+      color: #1f2a3a;
       font-weight: 800;
       font-size: 1.4rem;
       line-height: 1.2;
       letter-spacing: -0.5px;
+      text-decoration: none;
     }
     
     .logo-text span {
@@ -207,11 +281,20 @@
       letter-spacing: 1px;
     }
 
+    @media (max-width: 480px) {
+      .logo-text {
+        font-size: 1.1rem;
+      }
+      .logo-text span {
+        font-size: 0.7rem;
+      }
+    }
+
     /* Hamburger menü */
     .menu-toggle {
       background: transparent;
       border: 2px solid #c77734;
-      color: white;
+      color: #1f2a3a;
       font-size: 1.8rem;
       cursor: pointer;
       display: flex;
@@ -226,7 +309,16 @@
     
     .menu-toggle:hover {
       background: #c77734;
+      color: white;
       transform: rotate(90deg);
+    }
+
+    @media (max-width: 480px) {
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        font-size: 1.5rem;
+      }
     }
 
     /* Premium açılır menü */
@@ -236,13 +328,20 @@
       right: -400px;
       width: 320px;
       height: 100vh;
-      background: rgba(255,255,255,0.97);
+      background: white;
       backdrop-filter: blur(15px);
       padding: 100px 30px 40px;
       box-shadow: -10px 0 40px rgba(0,0,0,0.2);
       transition: right 0.4s ease-in-out;
       z-index: 1005;
       border-left: 4px solid #c77734;
+    }
+
+    @media (max-width: 480px) {
+      .nav-menu {
+        width: 280px;
+        padding: 80px 20px 30px;
+      }
     }
 
     .nav-menu.active {
@@ -257,6 +356,12 @@
       margin: 30px 0;
     }
 
+    @media (max-width: 480px) {
+      .nav-menu li {
+        margin: 20px 0;
+      }
+    }
+
     .nav-menu a {
       color: #1f2a3a;
       text-decoration: none;
@@ -268,6 +373,14 @@
       transition: 0.3s;
       padding: 8px 15px;
       border-radius: 50px;
+    }
+
+    @media (max-width: 480px) {
+      .nav-menu a {
+        font-size: 1.1rem;
+        gap: 15px;
+        padding: 6px 12px;
+      }
     }
 
     .nav-menu a:hover {
@@ -304,7 +417,6 @@
     
     /* HERO */
     .hero {
-      padding-top: 80px;
       background: linear-gradient(95deg, #0b1a2a 0%, #1f2a3a 80%);
       position: relative;
       min-height: 90vh;
@@ -312,6 +424,8 @@
       align-items: center;
       color: white;
       border-bottom: 6px solid #c77734;
+      width: 100%;
+      overflow: hidden;
     }
     
     .hero::after {
@@ -323,10 +437,21 @@
       pointer-events: none;
     }
     
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 70vh;
+        padding: 60px 0;
+      }
+      .hero::after {
+        display: none;
+      }
+    }
+    
     .hero-content {
       max-width: 700px;
       position: relative;
       z-index: 2;
+      width: 100%;
     }
     
     .hero h1 {
@@ -344,6 +469,24 @@
       margin-top: 0.5rem;
     }
     
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero h1 span {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero h1 span {
+        font-size: 1.2rem;
+      }
+    }
+    
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2.5rem;
@@ -353,51 +496,96 @@
       padding-left: 20px;
     }
     
+    @media (max-width: 768px) {
+      .hero p {
+        font-size: 1rem;
+        padding-left: 15px;
+      }
+    }
+    
     .hero-buttons {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
     }
     
-    /* BALON */
+    @media (max-width: 480px) {
+      .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+    
+    /* BALON - SADECE MOBİLDE GÖRÜNSÜN */
     .floating-ballon {
       position: fixed;
       bottom: 120px;
       right: 30px;
       background: white;
-      padding: 20px 25px;
+      padding: 16px 20px;
       border-radius: 60px 60px 60px 10px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
       z-index: 998;
       border: 3px solid #c77734;
       transform: translateX(150%);
       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-      max-width: 400px;
+      max-width: 350px;
+    }
+
+    /* Sadece mobilde göster */
+    @media (min-width: 769px) {
+      .floating-ballon {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .floating-ballon {
+        bottom: 100px;
+        right: 15px;
+        left: 15px;
+        max-width: calc(100% - 30px);
+        padding: 12px 16px;
+      }
     }
 
     .floating-ballon.show {
       transform: translateX(0);
     }
 
+    .ballon-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex: 1;
+    }
+
     .ballon-text {
       font-weight: 600;
       color: #1f2a3a;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      flex: 1;
+    }
+
+    @media (max-width: 480px) {
+      .ballon-text {
+        font-size: 0.9rem;
+      }
     }
 
     .ballon-btn {
       background: #2563eb;
       color: white;
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       text-decoration: none;
       transition: 0.3s;
       flex-shrink: 0;
@@ -407,22 +595,227 @@
       transform: scale(1.1);
       background: #1f2a3a;
     }
+
+    .ballon-close {
+      background: #e0e0e0;
+      color: #666;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      flex-shrink: 0;
+      transition: 0.3s;
+    }
+
+    .ballon-close:hover {
+      background: #c77734;
+      color: white;
+    }
     
-    /* HİZMETLER - GÜNCELLENDİ (5 spesifik hizmet) */
+    /* SEO İÇERİK - ANKARA ODAKLI */
+    .seo-content {
+      background: #eef2f6;
+      border-top: 6px solid #c77734;
+      border-bottom: 6px solid #1f2a3a;
+      width: 100%;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+    
+    .content-text {
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .content-text h3 {
+      font-size: 1.8rem;
+      color: #1f2a3a;
+      margin: 40px 0 20px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .content-text h3 {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+      }
+    }
+    
+    .content-text h3:first-of-type { margin-top: 0; }
+    
+    .content-text p {
+      margin-bottom: 20px;
+      color: #1f2a3a;
+      font-weight: 400;
+      line-height: 1.7;
+      word-wrap: break-word;
+    }
+    
+    .content-text strong { color: #c77734; }
+    
+    .ankara-highlight {
+      background: rgba(199,119,52,0.1);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 5px solid #c77734;
+      margin: 30px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .ankara-highlight {
+        padding: 15px;
+        margin: 20px 0;
+      }
+    }
+    
+    /* REFERANSLAR */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+    
+    .gallery-item {
+      border: 3px solid #1f2a3a;
+      transition: 0.2s;
+      aspect-ratio: 1/0.9;
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover {
+      border-color: #c77734;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* HİZMETLER - GÖRSELLİ KARTLAR */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       margin-top: 40px;
+      width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 30px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
     }
     
     .service-card {
+      position: relative;
       background: white;
       padding: 35px 25px;
       border: 2px solid #e9ecf0;
       transition: all 0.2s ease;
       text-align: center;
       box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
+      width: 100%;
+      overflow: hidden;
+      z-index: 1;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    
+    .service-card:hover::before {
+      opacity: 0.25;
+    }
+    
+    /* Her kart için özel arkaplan görselleri */
+    .service-card:nth-child(1)::before {
+      background-image: url('https://www.kamanroof.com/images/cati-kiremit-yenileme-ve-aktarma.webp');
+    }
+    
+    .service-card:nth-child(2)::before {
+      background-image: url('https://www.kamanroof.com/images/dikey-yagmur-inis-borusu.webp');
+    }
+    
+    .service-card:nth-child(3)::before {
+      background-image: url('https://www.kamanroof.com/images/kenetli-metal-kaplama.webp');
+    }
+    
+    .service-card:nth-child(4)::before {
+      background-image: url('https://www.kamanroof.com/images/dere-ve-baca-kenari.webp');
+    }
+    
+    .service-card:nth-child(5)::before {
+      background-image: url('https://www.kamanroof.com/images/yatay-oluk.webp');
+    }
+    
+    @media (max-width: 768px) {
+      .service-card {
+        padding: 25px 15px;
+        min-height: 250px;
+      }
     }
     
     .service-card:hover {
@@ -435,6 +828,16 @@
       font-size: 3.5rem;
       margin-bottom: 20px;
       color: #c77734;
+      position: relative;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
     }
     
     .service-card h3 {
@@ -442,11 +845,31 @@
       color: #1f2a3a;
       margin-bottom: 12px;
       font-weight: 700;
+      position: relative;
+      z-index: 2;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    }
+    
+    @media (max-width: 768px) {
+      .service-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
     }
     
     .service-card p {
-      color: #4b5563;
+      color: #1f2a3a;
       font-size: 0.95rem;
+      position: relative;
+      z-index: 2;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .service-card p {
+        font-size: 0.85rem;
+      }
     }
     
     /* NEDEN BİZ */
@@ -456,6 +879,21 @@
       gap: 0;
       border: 2px solid #1f2a3a;
       background: white;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    @media (max-width: 992px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+        border: none;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     .why-item {
@@ -463,6 +901,14 @@
       text-align: center;
       border-right: 2px solid #e9ecf0;
       transition: 0.2s;
+    }
+    
+    @media (max-width: 992px) {
+      .why-item {
+        border: 2px solid #1f2a3a;
+        margin: -1px 0 0 -1px;
+        padding: 25px 15px;
+      }
     }
     
     .why-item:last-child { border-right: none; }
@@ -482,98 +928,57 @@
       display: block;
     }
     
+    @media (max-width: 768px) {
+      .why-item .icon {
+        font-size: 2.5rem;
+      }
+    }
+    
     .why-item h4 {
       font-size: 1.4rem;
       margin: 10px 0 5px;
       color: #1f2a3a;
     }
     
+    @media (max-width: 768px) {
+      .why-item h4 {
+        font-size: 1.2rem;
+      }
+    }
+    
     .why-item p {
       color: #4a5560;
     }
     
-    /* SEO İÇERİK - ANKARA ODAKLI */
-    .seo-content {
-      background: #eef2f6;
-      border-top: 6px solid #c77734;
-      border-bottom: 6px solid #1f2a3a;
+    /* İLETİŞİM - HEADER RENGİYLE UYUMLU */
+    #iletisim {
+      background: white;
     }
     
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-    
-    .content-text h3 {
-      font-size: 1.8rem;
-      color: #1f2a3a;
-      margin: 40px 0 20px 0;
-    }
-    
-    .content-text h3:first-of-type { margin-top: 0; }
-    
-    .content-text p {
-      margin-bottom: 20px;
-      color: #1f2a3a;
-      font-weight: 400;
-      line-height: 1.7;
-    }
-    
-    .content-text strong { color: #c77734; }
-    
-    .ankara-highlight {
-      background: rgba(199,119,52,0.1);
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 5px solid #c77734;
-      margin: 30px 0;
-    }
-    
-    /* REFERANSLAR */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-    
-    .gallery-item {
-      border: 3px solid #1f2a3a;
-      transition: 0.2s;
-      aspect-ratio: 1/0.9;
-      overflow: hidden;
-    }
-    
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-    
-    .gallery-item:hover {
-      border-color: #c77734;
-    }
-    
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-    
-    /* İLETİŞİM */
     .contact-info {
       display: flex;
       flex-wrap: wrap;
       gap: 0;
       background: white;
       border: 3px solid #1f2a3a;
+      width: 100%;
+      overflow: hidden;
     }
     
     .contact-detail {
       flex: 1 1 300px;
       padding: 45px 40px;
-      background: #1f2a3a;
-      color: white;
+      background: white;
+      color: #1f2a3a;
+      border-right: 3px solid #c77734;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-detail {
+        padding: 30px 20px;
+        border-right: none;
+        border-bottom: 3px solid #c77734;
+      }
     }
     
     .contact-detail h3 {
@@ -582,24 +987,56 @@
       margin-bottom: 25px;
     }
     
+    @media (max-width: 768px) {
+      .contact-detail h3 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+    }
+    
     .contact-detail p {
       margin-bottom: 15px;
       font-size: 1.1rem;
+      word-wrap: break-word;
+      color: #1f2a3a;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-detail p {
+        font-size: 1rem;
+        margin-bottom: 12px;
+      }
     }
     
     .contact-detail a {
-      color: white;
+      color: #1f2a3a;
       text-decoration: none;
       border-bottom: 1px solid #c77734;
+      transition: 0.3s;
     }
     
-    .contact-detail i { color: #c77734; margin-right: 10px; font-style: normal; }
+    .contact-detail a:hover {
+      color: #c77734;
+    }
+    
+    .contact-detail i { 
+      color: #c77734; 
+      margin-right: 10px; 
+      font-style: normal; 
+      display: inline-block;
+      min-width: 20px;
+    }
     
     .map-placeholder {
       flex: 2 1 400px;
       background: #d9e0e8;
       min-height: 320px;
-      border-left: 3px solid #1f2a3a;
+    }
+    
+    @media (max-width: 768px) {
+      .map-placeholder {
+        min-height: 250px;
+      }
     }
     
     .map-placeholder iframe {
@@ -607,14 +1044,25 @@
       height: 100%;
       display: block;
       filter: grayscale(0.2);
+      border: 0;
     }
     
+    /* FOOTER - HEADER RENGİYLE UYUMLU */
     footer {
-      background: #0f1a24;
-      color: #a0b3c5;
+      background: white;
+      color: #1f2a3a;
       text-align: center;
       padding: 30px;
       border-top: 5px solid #c77734;
+      width: 100%;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+    }
+    
+    @media (max-width: 768px) {
+      footer {
+        padding: 20px 16px;
+        font-size: 0.9rem;
+      }
     }
     
     /* SCROLL ANIMATION */
@@ -640,21 +1088,11 @@
     }
     
     /* RESPONSIVE */
-    @media (max-width: 1100px) {
+    @media (max-width: 768px) {
       h2 { font-size: 2rem; }
-      .why-grid { grid-template-columns: repeat(2,1fr); border: none; }
-      .why-item { border: 2px solid #1f2a3a; margin: -1px 0 0 -1px; }
-      .gallery-grid { grid-template-columns: repeat(2,1fr); }
     }
     
-    @media (max-width: 800px) {
-      .hero h1 { font-size: 3rem; }
-      .hero h1 span { font-size: 1.8rem; }
-      .content-grid { grid-template-columns: 1fr; }
-      .hero::after { display: none; }
-    }
-    
-    @media (max-width: 500px) {
+    @media (max-width: 480px) {
       .hero h1 { font-size: 2.2rem; }
       .hero h1 span { font-size: 1.4rem; }
       .hero p { font-size: 1rem; }
@@ -662,20 +1100,30 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .float-buttons { bottom: 15px; right: 15px; }
       .float-btn { width: 52px; height: 52px; font-size: 26px; }
-      .contact-detail { padding: 30px 20px; }
       .logo-text { font-size: 1.2rem; }
+    }
+
+    /* Mobilde taşmayı önlemek için ek güvenlik */
+    img, iframe, video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p, h1, h2, h3, h4 {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER - YENİ TASARIM - SABİT -->
   <header>
     <div class="header-container">
-      <div class="logo">
-        <div class="logo-icon"><i class="fas fa-home"></i></div>
+      <a href="#hero" class="logo">
+        <img src="https://www.kamanroof.com/images/logo.png" alt="Kaman Roof Logo">
         <div class="logo-text">KAMAN ROOF <span>Çatı Sistemleri</span></div>
-      </div>
+      </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menü">
         <i class="fas fa-bars"></i>
       </button>
@@ -686,10 +1134,10 @@
   <div class="nav-menu" id="navMenu">
     <ul>
       <li><a href="#hero"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-      <li><a href="#hizmetler"><i class="fas fa-tools"></i> Hizmetler</a></li>
-      <li><a href="#neden-biz"><i class="fas fa-thumbs-up"></i> Neden Biz</a></li>
       <li><a href="#seo-blog"><i class="fas fa-newspaper"></i> Blog</a></li>
       <li><a href="#referanslar"><i class="fas fa-images"></i> Referanslar</a></li>
+      <li><a href="#hizmetler"><i class="fas fa-tools"></i> Hizmetler</a></li>
+      <li><a href="#neden-biz"><i class="fas fa-thumbs-up"></i> Neden Biz</a></li>
       <li><a href="#iletisim"><i class="fas fa-envelope"></i> İletişim</a></li>
       <li><a href="https://www.instagram.com/kamanroof/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
     </ul>
@@ -706,15 +1154,20 @@
     </a>
   </div>
 
-  <!-- BALON -->
+  <!-- BALON - SADECE MOBİLDE GÖRÜNÜR -->
   <div class="floating-ballon" id="floatingBallon">
-    <div class="ballon-text">
-      <i class="fas fa-tools" style="color: #c77734; margin-right: 8px;"></i>
-      Fiyat teklifi için uzman ekibimizi arayın!
+    <div class="ballon-content">
+      <div class="ballon-text">
+        <i class="fas fa-tools" style="color: #c77734; margin-right: 8px;"></i>
+        Fiyat teklifi için uzman ekibimizi arayın!
+      </div>
+      <a href="tel:+905374110030" class="ballon-btn">
+        <i class="fas fa-phone-alt"></i>
+      </a>
+      <button class="ballon-close" id="closeBallon" aria-label="Kapat">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
-    <a href="tel:+905374110030" class="ballon-btn">
-      <i class="fas fa-phone-alt"></i>
-    </a>
   </div>
 
   <!-- HERO - Ankara Çatı Ustası vurgulu -->
@@ -729,7 +1182,49 @@
     </div>
   </section>
 
-  <!-- HİZMETLER - 5 spesifik hizmet -->
+  <!-- SEO İÇERİK - ANKARA ODAKLI -->
+  <section class="seo-content" id="seo-blog">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-text fade-left">
+          <h2>Ankara Çatı Ustası Hizmetleri</h2>
+          <p>Başkent Ankara'da çatı sektöründe 15 yılı aşkın süredir hizmet veren Kaman Roof, profesyonel <strong>Ankara çatı ustası</strong> kadrosuyla her türlü çatı sorununuza çözüm üretiyor. Yeni Mahalle, Karşıyaka merkezli ekibimiz, Çankaya'dan Yenimahalle'ye, Keçiören'den Etimesgut'a kadar Ankara'nın tüm ilçelerinde hizmet vermektedir.</p>
+          
+          <h2>Çatı Kiremit Yenileme ve Aktarma</h2>
+          <p>Eskiyen, kırılan veya ömrünü tamamlayan kiremitler, çatınızda akma ve ısı kaybına neden olur. Uzman <strong>Ankara çatı ustası</strong> ekibimiz, kiremit yenileme ve çatı aktarma işlemlerinde size özel çözümler sunar. Mevcut kiremitleri söküp, yeni ve kaliteli malzemelerle çatınızı yeniler, ayrıca gerekli yalıtımı da sağlarız.</p>
+          
+          <div class="ankara-highlight">
+            <p><i class="fas fa-map-marker-alt" style="color: #c77734; margin-right: 10px;"></i> <strong>Ankara'nın tüm ilçelerinde hizmetinizdeyiz:</strong> Çankaya, Yenimahalle, Keçiören, Mamak, Sincan, Etimesgut, Pursaklar, Altındağ, Gölbaşı ve daha fazlası.</p>
+          </div>
+          
+          <h2>Dikey Yağmur İniş Borusu ve Yatay Oluk Sistemleri</h2>
+          <p>Yağmur sularının çatınızdan düzenli tahliyesi, binanızın ömrü için kritik öneme sahiptir. Dikey iniş boruları ve yatay oluk sistemlerinde uzman olan <strong>Ankara çatı ustası</strong> ekibimiz, tıkanma, kırılma veya yanlış eğim gibi sorunları tespit eder ve kalıcı çözümler üretir. Yeni binalar için montaj, eski binalar için bakım ve onarım hizmetleri sunuyoruz.</p>
+        </div>
+        <div class="content-text fade-right">
+          <h2>Kenetli Metal Kaplama</h2>
+          <p>Son yıllarda artan taleple birlikte kenetli metal çatı kaplama sistemleri, uzun ömürlü ve estetik çözümler sunar. Ankara'nın sert iklim koşullarına dayanıklı bu sistemleri, deneyimli <strong>Ankara çatı ustası</strong> kadromuzla başarıyla uyguluyoruz. Isı yalıtımı, ses yalıtımı ve estetik görünümü bir arada sunan metal çatılar, modern mimarinin vazgeçilmezidir.</p>
+          
+          <h2>Dere ve Baca Kenarı Uygulamaları</h2>
+          <p>Çatıların en hassas noktaları olan dereler ve baca kenarları, yanlış uygulamalarda su sızıntısına neden olur. Tecrübeli <strong>Ankara çatı ustası</strong> ekibimiz, dere ve baca kenarlarında özel sızdırmazlık teknikleri kullanarak çatınızı su sızıntılarına karşı korur. Kurşun baca, sac baca, metal baca uygulamalarında da profesyonel çözümler sunuyoruz.</p>
+          
+          <p style="background: white; padding: 25px; border-left: 8px solid #c77734; margin-top: 30px;"><strong>Ankara çatı ustası</strong> arayışınızda doğru adrestesiniz. Kaman Roof, kaliteli işçilik, uygun fiyat ve zamanında teslimat prensipleriyle çalışır. Çatınızla ilgili her türlü sorun için bize ulaşın, ücretsiz keşif ve teklif sunalım. 0537 411 00 30 numaralı telefondan veya WhatsApp üzerinden bize ulaşabilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERANSLAR -->
+  <section class="container" id="referanslar">
+    <h2 class="fade-up"><span>Son</span> Projeler</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi1.webp" alt="çatı kiremit yenileme" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi2.webp" alt="metal çatı kaplama" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi3.webp" alt="yağmur oluğu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi4.webp" alt="baca kenarı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+    </div>
+  </section>
+
+  <!-- HİZMETLER - 5 spesifik hizmet (Görseller arkaplanda) -->
   <section class="container" id="hizmetler">
     <h2 class="fade-left"><span>Uzmanlık</span> Alanlarımız</h2>
     <div class="services-grid">
@@ -774,50 +1269,8 @@
     </div>
   </section>
 
-  <!-- SEO İÇERİK - Ankara odaklı, doğal kullanım -->
-  <section class="seo-content" id="seo-blog">
-    <div class="container">
-      <div class="content-grid">
-        <div class="content-text fade-left">
-          <h2>Ankara Çatı Ustası Hizmetleri</h2>
-          <p>Başkent Ankara'da çatı sektöründe 15 yılı aşkın süredir hizmet veren Kaman Roof, profesyonel <strong>Ankara çatı ustası</strong> kadrosuyla her türlü çatı sorununuza çözüm üretiyor. Yeni Mahalle, Karşıyaka merkezli ekibimiz, Çankaya'dan Yenimahalle'ye, Keçiören'den Etimesgut'a kadar Ankara'nın tüm ilçelerinde hizmet vermektedir.</p>
-          
-          <h2>Çatı Kiremit Yenileme ve Aktarma</h2>
-          <p>Eskiyen, kırılan veya ömrünü tamamlayan kiremitler, çatınızda akma ve ısı kaybına neden olur. Uzman <strong>Ankara çatı ustası</strong> ekibimiz, kiremit yenileme ve çatı aktarma işlemlerinde size özel çözümler sunar. Mevcut kiremitleri söküp, yeni ve kaliteli malzemelerle çatınızı yeniler, ayrıca gerekli yalıtımı da sağlarız.</p>
-          
-          <div class="ankara-highlight">
-            <p><i class="fas fa-map-marker-alt" style="color: #c77734; margin-right: 10px;"></i> <strong>Ankara'nın tüm ilçelerinde hizmetinizdeyiz:</strong> Çankaya, Yenimahalle, Keçiören, Mamak, Sincan, Etimesgut, Pursaklar, Altındağ, Gölbaşı ve daha fazlası.</p>
-          </div>
-          
-          <h2>Dikey Yağmur İniş Borusu ve Yatay Oluk Sistemleri</h2>
-          <p>Yağmur sularının çatınızdan düzenli tahliyesi, binanızın ömrü için kritik öneme sahiptir. Dikey iniş boruları ve yatay oluk sistemlerinde uzman olan <strong>Ankara çatı ustası</strong> ekibimiz, tıkanma, kırılma veya yanlış eğim gibi sorunları tespit eder ve kalıcı çözümler üretir. Yeni binalar için montaj, eski binalar için bakım ve onarım hizmetleri sunuyoruz.</p>
-        </div>
-        <div class="content-text fade-right">
-          <h2>Kenetli Metal Kaplama</h2>
-          <p>Son yıllarda artan taleple birlikte kenetli metal çatı kaplama sistemleri, uzun ömürlü ve estetik çözümler sunar. Ankara'nın sert iklim koşullarına dayanıklı bu sistemleri, deneyimli <strong>Ankara çatı ustası</strong> kadromuzla başarıyla uyguluyoruz. Isı yalıtımı, ses yalıtımı ve estetik görünümü bir arada sunan metal çatılar, modern mimarinin vazgeçilmezidir.</p>
-          
-          <h2>Dere ve Baca Kenarı Uygulamaları</h2>
-          <p>Çatıların en hassas noktaları olan dereler ve baca kenarları, yanlış uygulamalarda su sızıntısına neden olur. Tecrübeli <strong>Ankara çatı ustası</strong> ekibimiz, dere ve baca kenarlarında özel sızdırmazlık teknikleri kullanarak çatınızı su sızıntılarına karşı korur. Kurşun baca, sac baca, metal baca uygulamalarında da profesyonel çözümler sunuyoruz.</p>
-          
-          <p style="background: white; padding: 25px; border-left: 8px solid #c77734; margin-top: 30px;"><strong>Ankara çatı ustası</strong> arayışınızda doğru adrestesiniz. Kaman Roof, kaliteli işçilik, uygun fiyat ve zamanında teslimat prensipleriyle çalışır. Çatınızla ilgili her türlü sorun için bize ulaşın, ücretsiz keşif ve teklif sunalım. 0537 411 00 30 numaralı telefondan veya WhatsApp üzerinden bize ulaşabilirsiniz.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REFERANSLAR -->
-  <section class="container" id="referanslar">
-    <h2 class="fade-up"><span>Son</span> Projeler</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi1.webp" alt="çatı kiremit yenileme" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi2.webp" alt="metal çatı kaplama" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi3.webp" alt="yağmur oluğu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi4.webp" alt="baca kenarı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
-    </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section style="background: #f4f7fb;" id="iletisim">
+  <!-- İLETİŞİM - HEADER RENGİYLE UYUMLU -->
+  <section id="iletisim">
     <div class="container">
       <h2 class="fade-left"><span>İletişim</span></h2>
       <div class="contact-info fade-up">
@@ -836,7 +1289,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER - HEADER RENGİYLE UYUMLU -->
   <footer>
     <p>© 2025 Kaman Roof Çatı Sistemleri - Yeni Mahalle, Karşıyaka / Ankara | Profesyonel Ankara Çatı Ustası</p>
   </footer>
@@ -871,17 +1324,40 @@
         link.addEventListener('click', closeMenu);
       });
 
-      // BALON
+      // BALON - Sadece mobilde ve kapatma butonlu
       const ballon = document.getElementById('floatingBallon');
+      const closeBallon = document.getElementById('closeBallon');
       let ballonShown = false;
       
-      window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
-        const documentHeight = document.body.scrollHeight;
-        
-        if (scrollPosition > documentHeight * 0.25 && !ballonShown) {
-          ballon.classList.add('show');
-          ballonShown = true;
+      // Sadece mobilde göster (768px altı)
+      function checkMobileAndShowBallon() {
+        if (window.innerWidth <= 768) {
+          window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const documentHeight = document.body.scrollHeight;
+            
+            if (scrollPosition > documentHeight * 0.25 && !ballonShown) {
+              ballon.classList.add('show');
+              ballonShown = true;
+            }
+          });
+        }
+      }
+      
+      // Kapatma butonu işlevi
+      if (closeBallon) {
+        closeBallon.addEventListener('click', function() {
+          ballon.classList.remove('show');
+        });
+      }
+      
+      // Sayfa yüklendiğinde kontrol et
+      checkMobileAndShowBallon();
+      
+      // Pencere boyutu değiştiğinde kontrol et
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          ballon.classList.remove('show');
         }
       });
 
