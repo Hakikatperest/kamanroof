@@ -1883,7 +1883,7 @@ el.classList.add('revealed');
 });
       
       window.addEventListener('load', () => {
-        animated.forEach(el => {
+       animatedElements.forEach(el => {
           const rect = el.getBoundingClientRect();
           if (rect.top < window.innerHeight - 80) el.classList.add('revealed');
         });
