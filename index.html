@@ -1332,7 +1332,6 @@
   </section>
 
   <!-- HİZMET ALANLARI -->
-  <section style="background: white;">
     <div class="container">
       <h2 class="fade-left"><span>Ankara'nın Tüm</span> İlçelerinde Hizmet</h2>
       <div class="districts-grid">
@@ -1865,10 +1864,21 @@
 
       // SCROLL ANIMATION
 const animatedElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-      const animObs = new IntersectionObserver((entries) => {
-        entries.forEach(e => e.isIntersecting && e.target.classList.add('revealed'));
-      }, { threshold: 0.2, rootMargin: "0px 0px -40px 0px" });
-      animated.forEach(el => animObs.observe(el));
+
+const animObs = new IntersectionObserver((entries) => {
+entries.forEach(e => e.isIntersecting && e.target.classList.add('revealed'));
+},{ threshold:0.2 });
+
+animatedElements.forEach(el => animObs.observe(el));
+
+window.addEventListener('load', () => {
+animatedElements.forEach(el => {
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight - 80){
+el.classList.add('revealed');
+}
+});
+});
       
       window.addEventListener('load', () => {
         animated.forEach(el => {
