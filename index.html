@@ -45,6 +45,8 @@ const track = document.querySelector('.repair-track');
 const leftBtn = document.querySelector('.repair-arrow.left');
 const rightBtn = document.querySelector('.repair-arrow.right');
 
+if(track && leftBtn && rightBtn){
+
 rightBtn.addEventListener('click', ()=>{
 track.scrollBy({
 left:300,
@@ -58,6 +60,8 @@ left:-300,
 behavior:'smooth'
 });
 });
+
+}
   </script>
   
   <!-- GSAP for animations -->
@@ -1472,7 +1476,8 @@ display:none;
   </section>
 
   <!-- HİZMET ALANLARI -->
-    <div class="container">
+  <section>
+<div class="container">
       <h2 class="fade-left"><span>Ankara'nın Tüm</span> İlçelerinde Hizmet</h2>
       <div class="districts-grid">
         <a href="#" class="district-link fade-up">Çankaya</a>
