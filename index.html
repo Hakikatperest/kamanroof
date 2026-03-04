@@ -900,20 +900,22 @@
       margin: 30px 0;
     }
     
-    .animation-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      opacity: 0;
-      transition: opacity 0.5s;
-      pointer-events: none;
-    }
+    .animation-slide{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column; /* ikon üstte yazı altta */
+  gap:20px;
+  text-align:center;
+  opacity:0;
+  transition:opacity .5s;
+  pointer-events:none;
+}
     
     .animation-slide.active {
       opacity: 1;
