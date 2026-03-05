@@ -86,12 +86,14 @@
       font-size: 2.4rem;
       margin-bottom: 2rem;
       letter-spacing: -0.02em;
+      text-align: center;
     }
     
     @media (max-width: 768px) {
       h2 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
+        text-align: left;
       }
     }
     
@@ -440,6 +442,13 @@
       width: 100%;
     }
     
+    @media (min-width: 992px) {
+      .hero-content {
+        margin-left: auto;
+        margin-right: 5%;
+      }
+    }
+    
     .hero h1 {
       font-size: 4rem;
       font-weight: 800;
@@ -587,57 +596,6 @@
       font-style: italic;
     }
     
-    /* FAQ BÖLÜMÜ */
-    .faq-container {
-      max-width: 800px;
-      margin: 40px auto 0;
-    }
-    
-    .faq-item {
-      background: white;
-      border: 2px solid #e9ecf0;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    .faq-question {
-      padding: 20px 25px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      color: #1f2a3a;
-      transition: 0.3s;
-    }
-    
-    .faq-question:hover {
-      background: rgba(199,119,52,0.05);
-    }
-    
-    .faq-question i {
-      color: #c77734;
-      transition: transform 0.3s;
-    }
-    
-    .faq-item.active .faq-question i {
-      transform: rotate(180deg);
-    }
-    
-    .faq-answer {
-      padding: 0 25px;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      color: #4b5563;
-    }
-    
-    .faq-item.active .faq-answer {
-      padding: 0 25px 20px;
-      max-height: 200px;
-    }
-    
     /* HİZMET ALANLARI GRID */
     .districts-grid {
       display: grid;
@@ -771,27 +729,24 @@
       font-size: 0.8rem;
     }
     
-    /* STRONG CTA BÖLÜMÜ - SADELEŞTİRİLDİ */
-   .cta-section {
-  position: relative;
-  background: url('https://www.kamanroof.com/images/cati-tamircisi0.webp') center/cover no-repeat;
-  color: white;
-  text-align: center;
-}
+    /* STRONG CTA BÖLÜMÜ */
+    .cta-section {
+      position: relative;
+      background: url('https://www.kamanroof.com/images/cati-tamircisi0.webp') center/cover no-repeat;
+      color: white;
+      text-align: center;
+    }
 
-.cta-section::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-}
+    .cta-section::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+    }
 
-.cta-content{
-  position:relative;
-  z-index:2;
-}
-    
     .cta-content {
+      position:relative;
+      z-index:2;
       max-width: 800px;
       margin: 0 auto;
     }
@@ -807,7 +762,7 @@
       border-bottom-color: #c77734;
     }
 
-    /* BÜYÜK TELEFON BUTONU (tek buton) */
+    /* BÜYÜK TELEFON BUTONU */
     .cta-big-phone {
       display: inline-block;
       background: #2563eb;
@@ -928,10 +883,10 @@
       font-size: 0.9rem;
     }
     
-    /* UZMANLIK ALANLARI (services-grid) */
+    /* UZMANLIK ALANLARI (services-grid) - YENİ ÇATI KİREMİT KARTI EKLENDİ */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
       margin-top: 40px;
     }
@@ -952,6 +907,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
     }
     
     .service-card::before {
@@ -972,20 +928,69 @@
       opacity: 0.25;
     }
     
+    /* Her kart için arkaplan görselleri */
     .service-card:nth-child(1)::before {
-      background-image: url('https://www.kamanroof.com/images/cati-kiremit-yenileme-ve-aktarma.webp');
+      background-image: url('https://www.kamanroof.com/images/cati-tamircisi4.webp');
     }
     .service-card:nth-child(2)::before {
-      background-image: url('https://www.kamanroof.com/images/dikey-yagmur-inis-borusu.webp');
+      background-image: url('https://www.kamanroof.com/images/cati-kiremit-yenileme-ve-aktarma.webp');
     }
     .service-card:nth-child(3)::before {
-      background-image: url('https://www.kamanroof.com/images/kenetli-metal-kaplama.webp');
+      background-image: url('https://www.kamanroof.com/images/dikey-yagmur-inis-borusu.webp');
     }
     .service-card:nth-child(4)::before {
-      background-image: url('https://www.kamanroof.com/images/dere-ve-baca-kenari.webp');
+      background-image: url('https://www.kamanroof.com/images/kenetli-metal-kaplama.webp');
     }
     .service-card:nth-child(5)::before {
+      background-image: url('https://www.kamanroof.com/images/dere-ve-baca-kenari.webp');
+    }
+    .service-card:nth-child(6)::before {
       background-image: url('https://www.kamanroof.com/images/yatay-oluk.webp');
+    }
+    
+    /* Telefon butonu - tıklanabilir kart içinde */
+    .service-call-btn {
+      display: none;
+      margin-top: 15px;
+      background: #2563eb;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: 2px solid white;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+      transition: all 0.3s ease;
+      width: 100%;
+      text-align: center;
+      animation: btn-pulse 2s infinite;
+    }
+    
+    .service-call-btn i {
+      margin-right: 8px;
+    }
+    
+    .service-call-btn:hover {
+      background: white;
+      color: #2563eb;
+      border-color: #2563eb;
+      transform: scale(1.05);
+    }
+    
+    @keyframes btn-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+    }
+    
+    .service-card.active .service-call-btn {
+      display: block;
+    }
+    
+    .service-card.active h3,
+    .service-card.active p {
+      margin-bottom: 5px;
     }
     
     /* NEDEN BİZ (why-grid) */
@@ -1055,7 +1060,7 @@
       transform: scale(1.1);
     }
     
-    /* ---------- YENİ İLETİŞİM TASARIMI ---------- */
+    /* YENİ İLETİŞİM TASARIMI */
     .contact-modern {
       display: flex;
       flex-wrap: wrap;
@@ -1211,7 +1216,6 @@
         font-size: 1.5rem;
       }
     }
-    /* ---------- İLETİŞİM TASARIM BİTİŞ ---------- */
     
     footer {
       background: white;
@@ -1243,7 +1247,7 @@
       opacity: 1;
     }
 
-    /* YENİ MODERN BUTON - Çatınız mı akıyor? Hemen arayın butonu */
+    /* MODERN BUTON */
     .modern-cta-button-container {
       text-align: center;
       margin-top: 50px;
@@ -1410,29 +1414,42 @@
     </div>
   </section>
 
-  <!-- 2. UZMANLIK ALANLARIMIZ -->
+  <!-- 2. UZMANLIK ALANLARIMIZ (Yeni kart eklendi ve tıklanabilir buton) -->
   <section id="hizmetler">
     <div class="container">
       <h2 class="fade-left"><span>Uzmanlık</span> Alanlarımız</h2>
-        <div class="service-card fade-up">
+      <div class="services-grid" id="servicesGrid">
+        <!-- Yeni kart: Çatı Kiremit Yenileme ve Aktarma -->
+        <div class="service-card fade-up" data-service="1">
+          <div class="service-icon"><i class="fas fa-home"></i></div>
+          <h3>Çatı Kiremit Yenileme ve Aktarma</h3>
+          <p>Eski kiremitleri söküp yenileriyle değiştirme, çatı aktarma işlemleri.</p>
+          <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
+        </div>
+        <!-- Mevcut kartlar -->
+        <div class="service-card fade-up" data-service="2">
           <div class="service-icon"><i class="fas fa-arrow-down"></i></div>
           <h3>Dikey Yağmur İniş Borusu</h3>
           <p>Yağmur suyu tahliye sistemleri, iniş borusu montaj ve tamiri.</p>
+          <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <div class="service-card fade-up">
+        <div class="service-card fade-up" data-service="3">
           <div class="service-icon"><i class="fas fa-layer-group"></i></div>
           <h3>Kenetli Metal Kaplama</h3>
           <p>Dayanıklı ve uzun ömürlü kenetli metal çatı kaplama sistemleri.</p>
+          <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <div class="service-card fade-up">
+        <div class="service-card fade-up" data-service="4">
           <div class="service-icon"><i class="fas fa-border-all"></i></div>
           <h3>Dere ve Baca Kenarı</h3>
           <p>Çatı dereleri, baca etrafı sızdırmazlık ve yalıtım uygulamaları.</p>
+          <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <div class="service-card fade-up">
+        <div class="service-card fade-up" data-service="5">
           <div class="service-icon"><i class="fas fa-long-arrow-alt-down"></i></div>
           <h3>Yatay Oluk</h3>
           <p>Yatay oluk sistemleri montajı, tamiri ve bakımı.</p>
+          <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
       </div>
     </div>
@@ -1453,7 +1470,7 @@
           <div class="article-content">
             <h3 class="article-title">Çatı Akması</h3>
             <div class="article-question">Çatı neden akar?</div>
-            <p class="article-excerpt">Deneyimli bir Ankara çatı ustası olarak söyleyebilirim ki, çatı akmasının en yaygın nedenleri eskiyen ve kırılan kiremitler, yanlış uygulama yapılan dereler, baca kenarlarında sızdıran sıvalar ve aşırı hava koşullarının yol açtığı malzeme yorgunluğudur. Özellikle kış aylarında kar ve buzlanma, çatınızda küçük çatlaklardan içeri su sızmasına neden olabilir. Ankara'nın sert iklim koşullarında, düzenli çatı bakımı yaptırmak, bu tür sorunları önlemenin en etkili yoludur.</p>
+            <p class="article-excerpt">Deneyimli bir Ankara çatı ustası olarak söyleyebilirim ki, çatı akmasının en yaygın nedenleri eskiyen ve kırılan kiremitler, yanlış uygulama yapılan dereler, baca kenarlarında sızdıran sıvalar ve aşırı hava koşullarının yol açtığı malzeme yorgunluğudur.</p>
             <div class="article-meta">
               <i class="fas fa-map-marker-alt"></i> Ankara Çatı Ustası
             </div>
@@ -1467,7 +1484,7 @@
           <div class="article-content">
             <h3 class="article-title">Çatı Aktarma</h3>
             <div class="article-question">Çatı aktarma ne zaman yapılmalı?</div>
-            <p class="article-excerpt">Bir Ankara çatı ustası olarak en sık aldığım sorulardan biri de budur. 20 yıldan eski çatılar, sık sık akıntı yapan, kiremitleri kayan veya kırılan çatılar aktarılmalıdır. Çatı aktarma işlemi, sadece kiremit değişimi değil, aynı zamanda alt yapıdaki yalıtımın yenilenmesi, ahşap konstrüksiyonun güçlendirilmesi ve oluk sistemlerinin elden geçirilmesidir. Böylece çatınız 30-40 yıl daha sorunsuz hizmet verir. Eğer tavanınızda su lekeleri, rutubet kokusu veya dışarıdan bakınca kırık kiremitler görüyorsanız, bir ustadan randevu almanın zamanı gelmiş demektir.</p>
+            <p class="article-excerpt">Bir Ankara çatı ustası olarak en sık aldığım sorulardan biri de budur. 20 yıldan eski çatılar, sık sık akıntı yapan, kiremitleri kayan veya kırılan çatılar aktarılmalıdır.</p>
             <div class="article-meta">
               <i class="fas fa-map-marker-alt"></i> Ankara Çatı Ustası
             </div>
@@ -1481,7 +1498,7 @@
           <div class="article-content">
             <h3 class="article-title">Metal Çatı</h3>
             <div class="article-question">Metal çatı avantajları</div>
-            <p class="article-excerpt">Son yıllarda Ankara'da metal çatıya olan ilgi giderek artıyor. Bir Ankara çatı ustası olarak metal çatıların en büyük avantajlarını şöyle sıralayabilirim: 50 yıla varan uzun ömür, beton kiremide göre çok daha hafif olması sayesinde çatı konstrüksiyonunu yormaması, yangına karşı dayanıklılık ve estetik görünüm. Ayrıca kenetli sistem sayesinde su sızdırma riski neredeyse sıfırdır. Ankara'nın rüzgarlı havasında, kiremitlerin uçma riski varken, metal çatılar sağlam bir şekilde yerinde kalır. Isı yalıtımı için altına uygulanan izolasyonla birlikte, evinizde hem sıcak hem de sessiz bir ortam sağlar.</p>
+            <p class="article-excerpt">Son yıllarda Ankara'da metal çatıya olan ilgi giderek artıyor. Bir Ankara çatı ustası olarak metal çatıların en büyük avantajlarını şöyle sıralayabilirim.</p>
             <div class="article-meta">
               <i class="fas fa-map-marker-alt"></i> Ankara Çatı Ustası
             </div>
@@ -1495,7 +1512,7 @@
           <div class="article-content">
             <h3 class="article-title">Yağmur Oluğu</h3>
             <div class="article-question">Yağmur oluğu neden tıkanır?</div>
-            <p class="article-excerpt">Yağmur olukları, çatınızın sağlığı için hayati önem taşır. Ankara'da özellikle sonbahar aylarında, ağaçlardan dökülen yapraklar, çam iğneleri ve tozlar olukların tıkanmasına yol açar. Kuşların yuva yapması, rüzgarla gelen torba parçaları da tıkanıklık nedenleri arasında. Tıkanan oluklar, yağmur suyunun düzenli akmasını engeller, su duvarlardan aşağı sızarak cephede lekelenmelere ve zamanla temelde hasara yol açar. Bu yüzden düzenli olarak (yılda en az iki kez) oluk temizliği yaptırmanızı öneririm. Profesyonel bir Ankara çatı ustası, oluklarınızı temizlerken aynı zamanda kelepçeleri ve ek yerlerini de kontrol eder.</p>
+            <p class="article-excerpt">Yağmur olukları, çatınızın sağlığı için hayati önem taşır. Ankara'da özellikle sonbahar aylarında, ağaçlardan dökülen yapraklar, çam iğneleri ve tozlar olukların tıkanmasına yol açar.</p>
             <div class="article-meta">
               <i class="fas fa-map-marker-alt"></i> Ankara Çatı Ustası
             </div>
@@ -1503,14 +1520,13 @@
         </div>
       </div>
 
-      <!-- TAŞINAN VE YENİLENEN BUTON: Çatınız mı akıyor? Hemen bizi arayın! (modern, sayfa uyumlu) -->
+      <!-- TAŞINAN VE YENİLENEN BUTON -->
       <div class="modern-cta-button-container fade-up">
         <a href="tel:+905374110030" class="btn-modern-acil">
           <i class="fas fa-tools"></i> Çatınız mı akıyor? Hemen Arayın!
           <i class="fas fa-phone-alt"></i>
         </a>
       </div>
-
     </div>
   </section>
 
@@ -1541,7 +1557,7 @@
     </div>
   </section>
 
-  <!-- 5. SON PROJELER (Referanslar) - YENİ KONUM: Yorumlardan hemen sonra -->
+  <!-- 5. SON PROJELER (Referanslar) -->
   <section class="container" id="referanslar">
     <h2 class="fade-up"><span>Son</span> Projeler</h2>
     <div class="gallery-grid">
@@ -1551,20 +1567,6 @@
       <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi4.webp" alt="baca kenarı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
     </div>
   </section>
-
-  <!-- 6. GÜÇLÜ CTA BÖLÜMÜ (eski yeri, ama buton taşındı) - İsterseniz burası tamamen kaldırılabilir, ancak kod bütünlüğü için bırakıyorum. Artık kullanılmıyor -->
-  <!--
-  <section class="cta-section" id="cta-acil">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="fade-up"><span>Çatınız mı akıyor?</span> Hemen bizi arayın!</h2>
-        <a href="tel:+905374110030" class="cta-big-phone fade-up">
-          <i class="fas fa-phone-alt"></i> 0537 411 00 30
-        </a>
-      </div>
-    </div>
-  </section>
-  -->
 
   <!-- 7. ANKARA'NIN TÜM İLÇELERİNDE HİZMET -->
   <section id="ilceler">
@@ -1690,33 +1692,28 @@
     <p>© 2025 Kaman Roof Çatı Sistemleri - Yeni Mahalle, Karşıyaka / Ankara | Profesyonel Ankara Çatı Ustası</p>
   </footer>
 
-  <!-- Three.js 3D Çatı Animasyonu - DÜZENLENDİ (kaybolma sorunu giderildi) -->
+  <!-- Three.js 3D Çatı Animasyonu -->
   <script type="module">
     import * as THREE from 'three';
     import { OrbitControls } from 'https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js';
 
-    // Canvas container'ı kontrol et
     const container = document.getElementById('canvas-container');
     if (!container) {
       console.warn('Canvas container bulunamadı!');
     } else {
-      // Scene
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0x0b1a2a);
       
-      // Camera
       const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
       camera.position.set(5, 3, 8);
       camera.lookAt(0, 0, 0);
       
-      // Renderer
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(window.devicePixelRatio);
-      container.innerHTML = ''; // Temizlik
+      container.innerHTML = '';
       container.appendChild(renderer.domElement);
       
-      // Controls (masaüstünde)
       let controls = null;
       if (window.innerWidth > 768) {
         controls = new OrbitControls(camera, renderer.domElement);
@@ -1728,17 +1725,14 @@
         controls.maxPolarAngle = Math.PI / 2;
       }
       
-      // Işıklar
       const ambientLight = new THREE.AmbientLight(0x404060);
       scene.add(ambientLight);
       const dirLight = new THREE.DirectionalLight(0xffffff, 1);
       dirLight.position.set(1, 2, 1);
       scene.add(dirLight);
       
-      // Çatı grubu
       const roofGroup = new THREE.Group();
       
-      // Ana çatı
       const roofBase = new THREE.ConeGeometry(2, 1.5, 4);
       const roofMaterial = new THREE.MeshPhongMaterial({ 
         color: 0xc77734,
@@ -1752,7 +1746,6 @@
       roof.position.y = 0.75;
       roofGroup.add(roof);
       
-      // Kiremit wireframe
       const tileWireframe = new THREE.LineSegments(
         new THREE.EdgesGeometry(roofBase),
         new THREE.LineBasicMaterial({ color: 0xffaa55 })
@@ -1761,14 +1754,12 @@
       tileWireframe.position.y = 0.75;
       roofGroup.add(tileWireframe);
       
-      // İzolasyon
       const isolationGeo = new THREE.BoxGeometry(1.8, 0.2, 1.8);
       const isolationMat = new THREE.MeshPhongMaterial({ color: 0x88aaff, transparent: true, opacity: 0.3 });
       const isolation = new THREE.Mesh(isolationGeo, isolationMat);
       isolation.position.y = 0.2;
       roofGroup.add(isolation);
       
-      // Ahşap kolonlar
       const woodMat = new THREE.MeshPhongMaterial({ color: 0x8b5a2b });
       for (let i = -1; i <= 1; i+=2) {
         for (let j = -1; j <= 1; j+=2) {
@@ -1778,19 +1769,16 @@
         }
       }
       
-      // Baca
       const chimney = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.2, 0.5), new THREE.MeshPhongMaterial({ color: 0xaa8866 }));
       chimney.position.set(0.8, 0.6, 0.8);
       roofGroup.add(chimney);
       
       scene.add(roofGroup);
       
-      // Grid
       const gridHelper = new THREE.GridHelper(10, 20, 0xc77734, 0x444466);
       gridHelper.position.y = -0.5;
       scene.add(gridHelper);
       
-      // Yıldızlar
       const starsGeo = new THREE.BufferGeometry();
       const starsCount = 200;
       const starsPos = new Float32Array(starsCount * 3);
@@ -1804,23 +1792,15 @@
       const stars = new THREE.Points(starsGeo, starsMat);
       scene.add(stars);
       
-      // Scroll efekti
       window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
         const maxScroll = document.body.scrollHeight - window.innerHeight;
         const progress = scrollY / maxScroll;
         if (roofGroup.children.length >= 3) {
           isolation.material.opacity = 0.3 + progress * 0.5;
-          const woodProgress = Math.max(0, Math.min(1, (progress - 0.3) * 2));
-          roofGroup.children.forEach((child, index) => {
-            if (index >= 3) { // kolonlar
-              if (child.material) child.material.opacity = woodProgress;
-            }
-          });
         }
       });
       
-      // Animasyon döngüsü
       function animate() {
         requestAnimationFrame(animate);
         
@@ -1837,7 +1817,6 @@
       
       animate();
       
-      // Resize
       window.addEventListener('resize', () => {
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
@@ -1856,6 +1835,28 @@
       menuToggle.addEventListener('click', (e) => { e.stopPropagation(); navMenu.classList.contains('active') ? closeMenu() : openMenu(); });
       overlay.addEventListener('click', closeMenu);
       document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', closeMenu));
+
+      // Uzmanlık alanları kartlarına tıklama olayı - telefon butonu göster
+      const serviceCards = document.querySelectorAll('.service-card');
+      serviceCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          // Tıklanan eleman butonun kendisi değilse (butona tıklandığında active ekleme/çıkarma yapma)
+          if (!e.target.closest('.service-call-btn')) {
+            // Aktif kartı kapat (diğerlerini kapat)
+            serviceCards.forEach(c => c.classList.remove('active'));
+            // Bu kartı aktif yap
+            this.classList.add('active');
+          }
+          // Butona tıklandığında normal link çalışsın
+        });
+      });
+
+      // Dökümanın herhangi bir yerine tıklandığında kartları kapat (opsiyonel)
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.service-card')) {
+          serviceCards.forEach(c => c.classList.remove('active'));
+        }
+      });
 
       const statNumbers = document.querySelectorAll('.stat-number');
       const statsSection = document.getElementById('istatistikler');
@@ -1884,11 +1885,6 @@
         if (rect.top < window.innerHeight - 100) animateStats();
       });
 
-      // FAQ accordion (varsa)
-      document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => { question.parentElement.classList.toggle('active'); });
-      });
-
       // Lazy load
       const lazyImages = document.querySelectorAll('img.lazy');
       if ('IntersectionObserver' in window) {
@@ -1912,7 +1908,7 @@
     })();
   </script>
   
-  <!-- FAQ Schema (isteğe bağlı) -->
+  <!-- FAQ Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
