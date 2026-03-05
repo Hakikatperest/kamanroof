@@ -1994,12 +1994,7 @@ display:none !important;
       const lightboxNext = document.getElementById('lightboxNext');
       
       let currentIndex = 0;
-      const images = [
-        'https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp',
-        'https://www.kamanroof.com/images/cati-tamircisi2.webp',
-        'https://www.kamanroof.com/images/cati-tamircisi3.webp',
-        'https://www.kamanroof.com/images/cati-tamircisi4.webp'
-      ];
+     const images = Array.from(document.querySelectorAll('.gallery-item img')).map(img => img.dataset.src);
 
       function openLightbox(index) {
         currentIndex = index;
