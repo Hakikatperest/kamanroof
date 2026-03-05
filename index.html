@@ -603,9 +603,15 @@ display:none !important;
     /* HİZMET ALANLARI GRID */
     .districts-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       margin-top: 40px;
+    }
+    
+    @media (max-width: 992px) {
+      .districts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
     
     @media (max-width: 768px) {
@@ -1695,6 +1701,22 @@ display:none !important;
         <a class="district-link fade-up" data-district="Gölbaşı">Gölbaşı</a>
         <a class="district-link fade-up" data-district="Altındağ">Altındağ</a>
         <a class="district-link fade-up" data-district="Pursaklar">Pursaklar</a>
+        <a class="district-link fade-up" data-district="Akyurt">Akyurt</a>
+        <a class="district-link fade-up" data-district="Ayaş">Ayaş</a>
+        <a class="district-link fade-up" data-district="Bala">Bala</a>
+        <a class="district-link fade-up" data-district="Beypazarı">Beypazarı</a>
+        <a class="district-link fade-up" data-district="Çamlıdere">Çamlıdere</a>
+        <a class="district-link fade-up" data-district="Çubuk">Çubuk</a>
+        <a class="district-link fade-up" data-district="Elmadağ">Elmadağ</a>
+        <a class="district-link fade-up" data-district="Evren">Evren</a>
+        <a class="district-link fade-up" data-district="Güdül">Güdül</a>
+        <a class="district-link fade-up" data-district="Haymana">Haymana</a>
+        <a class="district-link fade-up" data-district="Kahramankazan">Kahramankazan</a>
+        <a class="district-link fade-up" data-district="Kalecik">Kalecik</a>
+        <a class="district-link fade-up" data-district="Kızılcahamam">Kızılcahamam</a>
+        <a class="district-link fade-up" data-district="Nallıhan">Nallıhan</a>
+        <a class="district-link fade-up" data-district="Polatlı">Polatlı</a>
+        <a class="district-link fade-up" data-district="Şereflikoçhisar">Şereflikoçhisar</a>
       </div>
     </div>
   </section>
@@ -2100,7 +2122,7 @@ display:none !important;
     "mainEntity": [
       { "@type": "Question", "name": "Çatı tamiri kaç gün sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Küçük onarımlar aynı gün tamamlanırken, çatı aktarma gibi büyük işler 3-5 gün sürebilir. Keşif sonrası size net bir süre verebiliriz." } },
       { "@type": "Question", "name": "Çatı aktarma fiyatı ne kadar?", "acceptedAnswer": { "@type": "Answer", "text": "Fiyatlar çatı büyüklüğü, malzeme kalitesi ve işçilik süresine göre değişir. Ücretsiz keşif sonrası size özel fiyat teklifi sunarız." } },
-      { "@type": "Question", "name": "Ankara'nın tüm ilçelerine hizmet veriyor musunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Evet, Ankara'nın tüm ilçelerine hizmet veriyoruz: Çankaya, Yenimahalle, Keçiören, Mamak, Etimesgut, Sincan, Gölbaşı, Altındağ, Pursaklar ve diğer tüm ilçeler." } }
+      { "@type": "Question", "name": "Ankara'nın tüm ilçelerine hizmet veriyor musunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Evet, Ankara'nın tüm ilçelerine hizmet veriyoruz: Çankaya, Yenimahalle, Keçiören, Mamak, Etimesgut, Sincan, Gölbaşı, Altındağ, Pursaklar, Akyurt, Ayaş, Bala, Beypazarı, Çamlıdere, Çubuk, Elmadağ, Evren, Güdül, Haymana, Kahramankazan, Kalecik, Kızılcahamam, Nallıhan, Polatlı, Şereflikoçhisar ve diğer tüm ilçeler." } }
     ]
   }
   </script>
