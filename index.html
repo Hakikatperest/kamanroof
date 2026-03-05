@@ -621,6 +621,7 @@
       font-weight: 600;
       text-align: center;
       transition: 0.3s;
+      cursor: pointer;
     }
     
     .district-link:hover {
@@ -628,6 +629,101 @@
       color: #c77734;
       transform: translateY(-5px);
       box-shadow: 0 10px 20px -10px rgba(199,119,52,0.3);
+    }
+    
+    /* PREMIUM BİLDİRİM (TOAST) */
+    .district-toast {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 4px #c77734, 0 0 0 8px white;
+      z-index: 9999;
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 2px solid #c77734;
+    }
+    
+    .district-toast.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .toast-icon {
+      font-size: 4rem;
+      color: #c77734;
+      margin-bottom: 15px;
+      background: #fff3e0;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      border: 3px dashed #c77734;
+    }
+    
+    .toast-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1f2a3a;
+      margin-bottom: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .toast-text {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: #4b5563;
+    }
+    
+    .toast-phone {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      font-size: 2rem;
+      font-weight: 800;
+      padding: 15px 40px;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 15px 25px -8px #2563eb;
+      border: 2px solid white;
+      transition: 0.3s;
+      margin-bottom: 20px;
+    }
+    
+    .toast-phone:hover {
+      background: white;
+      color: #2563eb;
+      border-color: #2563eb;
+      transform: scale(1.05);
+    }
+    
+    .toast-close {
+      background: transparent;
+      border: 2px solid #c77734;
+      color: #c77734;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 8px 25px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    
+    .toast-close:hover {
+      background: #c77734;
+      color: white;
     }
     
     /* ÇATI SORUNLARI BLOG - YENİ MAKALE BÖLÜMÜ */
@@ -920,7 +1016,7 @@
       height: 100%;
       background-size: cover;
       background-position: center;
-      opacity: 0.25;
+      opacity: 0.15;
       transition: opacity 0.3s ease;
       z-index: -1;
     }
@@ -1027,7 +1123,7 @@
       color: white;
     }
     
-    /* GALERİ - Lightbox eklendi */
+    /* GALERİ - Lightbox (çarpı butonu KALDIRILDI) */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1063,7 +1159,7 @@
       transform: scale(1.1);
     }
     
-    /* LIGHTBOX STYLES */
+    /* LIGHTBOX STYLES (çarpı butonu KALDIRILDI) */
     .lightbox {
       display: none;
       position: fixed;
@@ -1071,7 +1167,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(0, 0, 0, 0.95);
       z-index: 9999;
       justify-content: center;
       align-items: center;
@@ -1098,30 +1194,6 @@
       border-radius: 8px;
     }
     
-    .lightbox-close {
-      position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 40px;
-      height: 40px;
-      background: #c77734;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      z-index: 10000;
-    }
-    
-    .lightbox-close:hover {
-      background: #b55e1f;
-      transform: rotate(90deg);
-    }
-    
     .lightbox-prev,
     .lightbox-next {
       position: absolute;
@@ -1139,6 +1211,7 @@
       align-items: center;
       justify-content: center;
       transition: 0.3s;
+      z-index: 10000;
     }
     
     .lightbox-prev:hover,
@@ -1157,14 +1230,10 @@
     
     @media (max-width: 768px) {
       .lightbox-prev {
-        left: -30px;
+        left: 10px;
       }
       .lightbox-next {
-        right: -30px;
-      }
-      .lightbox-close {
-        top: -30px;
-        right: -30px;
+        right: 10px;
       }
     }
     
@@ -1476,6 +1545,21 @@
     </a>
   </div>
 
+  <!-- PREMIUM TOAST BİLDİRİM (ilçeler için) -->
+  <div class="district-toast" id="districtToast">
+    <div class="toast-icon">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <div class="toast-title" id="toastDistrictTitle">Çankaya</div>
+    <div class="toast-text" id="toastDistrictText">çatı ustası mı arıyorsunuz?</div>
+    <a href="tel:+905374110030" class="toast-phone" id="toastPhone">
+      <i class="fas fa-phone-alt"></i> 0537 411 00 30
+    </a>
+    <div>
+      <button class="toast-close" id="toastClose">Kapat</button>
+    </div>
+  </div>
+
   <!-- HERO with 3D - SOLA KAYDIRILDI -->
   <section class="hero" id="hero">
     <div id="canvas-container"></div>
@@ -1664,7 +1748,7 @@
     </div>
   </section>
 
-  <!-- 5. SON PROJELER (Referanslar) - LIGHTBOX EKLENDİ -->
+  <!-- 5. SON PROJELER (Referanslar) - LIGHTBOX (çarpı butonu KALDIRILDI) -->
   <section class="container" id="referanslar">
     <h2 class="fade-up"><span>Son</span> Projeler</h2>
     <div class="gallery-grid" id="galleryGrid">
@@ -1683,30 +1767,29 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
+  <!-- LIGHTBOX (çarpı butonu YOK) -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-content">
-      <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
       <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
       <img id="lightboxImg" src="" alt="Büyük Görsel">
       <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
 
-  <!-- 7. ANKARA'NIN TÜM İLÇELERİNDE HİZMET -->
+  <!-- 7. ANKARA'NIN TÜM İLÇELERİNDE HİZMET (PREMIUM TOAST EKLENDİ) -->
   <section id="ilceler">
     <div class="container">
       <h2 class="fade-left"><span>Ankara'nın Tüm</span> İlçelerinde Hizmet</h2>
       <div class="districts-grid">
-        <a href="#" class="district-link fade-up">Çankaya</a>
-        <a href="#" class="district-link fade-up">Yenimahalle</a>
-        <a href="#" class="district-link fade-up">Keçiören</a>
-        <a href="#" class="district-link fade-up">Mamak</a>
-        <a href="#" class="district-link fade-up">Etimesgut</a>
-        <a href="#" class="district-link fade-up">Sincan</a>
-        <a href="#" class="district-link fade-up">Gölbaşı</a>
-        <a href="#" class="district-link fade-up">Altındağ</a>
-        <a href="#" class="district-link fade-up">Pursaklar</a>
+        <a class="district-link fade-up" data-district="Çankaya">Çankaya</a>
+        <a class="district-link fade-up" data-district="Yenimahalle">Yenimahalle</a>
+        <a class="district-link fade-up" data-district="Keçiören">Keçiören</a>
+        <a class="district-link fade-up" data-district="Mamak">Mamak</a>
+        <a class="district-link fade-up" data-district="Etimesgut">Etimesgut</a>
+        <a class="district-link fade-up" data-district="Sincan">Sincan</a>
+        <a class="district-link fade-up" data-district="Gölbaşı">Gölbaşı</a>
+        <a class="district-link fade-up" data-district="Altındağ">Altındağ</a>
+        <a class="district-link fade-up" data-district="Pursaklar">Pursaklar</a>
       </div>
     </div>
   </section>
@@ -2007,11 +2090,10 @@
         if (rect.top < window.innerHeight - 100) animateStats();
       });
 
-      // Lightbox
+      // Lightbox (çarpı butonu kaldırıldı)
       const galleryItems = document.querySelectorAll('.gallery-item');
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightboxImg');
-      const lightboxClose = document.getElementById('lightboxClose');
       const lightboxPrev = document.getElementById('lightboxPrev');
       const lightboxNext = document.getElementById('lightboxNext');
       
@@ -2049,7 +2131,6 @@
         item.addEventListener('click', () => openLightbox(index));
       });
 
-      lightboxClose.addEventListener('click', closeLightbox);
       lightboxNext.addEventListener('click', nextImage);
       lightboxPrev.addEventListener('click', prevImage);
 
@@ -2064,6 +2145,40 @@
           if (e.key === 'Escape') closeLightbox();
           if (e.key === 'ArrowRight') nextImage();
           if (e.key === 'ArrowLeft') prevImage();
+        }
+      });
+
+      // PREMIUM TOAST BİLDİRİM (ilçeler için)
+      const districtToast = document.getElementById('districtToast');
+      const toastDistrictTitle = document.getElementById('toastDistrictTitle');
+      const toastDistrictText = document.getElementById('toastDistrictText');
+      const toastPhone = document.getElementById('toastPhone');
+      const toastClose = document.getElementById('toastClose');
+      
+      const districtLinks = document.querySelectorAll('.district-link');
+      
+      function showDistrictToast(district) {
+        toastDistrictTitle.textContent = district;
+        // Telefon numarası zaten sabit
+        districtToast.classList.add('active');
+      }
+      
+      districtLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const district = link.getAttribute('data-district');
+          showDistrictToast(district);
+        });
+      });
+      
+      toastClose.addEventListener('click', () => {
+        districtToast.classList.remove('active');
+      });
+      
+      // Toast dışına tıklayınca kapanma (opsiyonel)
+      districtToast.addEventListener('click', (e) => {
+        if (e.target === districtToast) {
+          districtToast.classList.remove('active');
         }
       });
 
