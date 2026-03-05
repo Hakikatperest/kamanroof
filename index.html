@@ -1671,7 +1671,9 @@
   <!-- LIGHTBOX (çarpı butonu YOK) -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-content">
+      <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
       <img id="lightboxImg" src="" alt="Büyük Görsel">
+      <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
 
@@ -1988,6 +1990,12 @@
       const lightboxNext = document.getElementById('lightboxNext');
       
       let currentIndex = 0;
+      const images = [
+        'https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp',
+        'https://www.kamanroof.com/images/cati-tamircisi2.webp',
+        'https://www.kamanroof.com/images/cati-tamircisi3.webp',
+        'https://www.kamanroof.com/images/cati-tamircisi4.webp'
+      ];
 
       function openLightbox(index) {
         currentIndex = index;
@@ -2011,14 +2019,9 @@
         lightboxImg.src = images[currentIndex];
       }
 
-      galleryItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    const img = item.querySelector("img");
-    lightboxImg.src = img.dataset.src || img.src;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-});
+      galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => openLightbox(index));
+      });
 
       lightboxNext.addEventListener('click', nextImage);
       lightboxPrev.addEventListener('click', prevImage);
@@ -2104,3 +2107,6 @@
   </script>
 </body>
 </html>
+
+
+son projelerdeki resimlerin sağı ve solundaki kaydırma butonları çalışmıyor hatayı nasıl düzeltebilirim
