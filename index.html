@@ -46,7 +46,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   
   <style>
-    /* RESET & KÖKLER - AYNI TASARIM KORUNDU */
+    /* RESET & KÖKLER */
     * {
       margin: 0;
       padding: 0;
@@ -442,10 +442,9 @@
       width: 100%;
     }
     
-    /* SOLA KAYDIRMA İÇİN margin-left: 0, margin-right: auto */
     @media (min-width: 992px) {
       .hero-content {
-         margin-left: auto; 
+        margin-left: auto; 
         margin-right: 700px;
       }
     }
@@ -631,19 +630,19 @@
       box-shadow: 0 10px 20px -10px rgba(199,119,52,0.3);
     }
     
-    /* PREMIUM BİLDİRİM (TOAST) */
+    /* PREMIUM BİLDİRİM (TOAST) - KÜÇÜLTÜLDÜ */
     .district-toast {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       background: white;
-      padding: 30px 40px;
+      padding: 20px 25px;
       border-radius: 20px;
       box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 4px #c77734, 0 0 0 8px white;
       z-index: 9999;
       text-align: center;
-      max-width: 450px;
+      max-width: 350px;
       width: 90%;
       opacity: 0;
       visibility: hidden;
@@ -658,31 +657,31 @@
     }
     
     .toast-icon {
-      font-size: 4rem;
+      font-size: 2.5rem;
       color: #c77734;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       background: #fff3e0;
-      width: 90px;
-      height: 90px;
+      width: 60px;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      margin: 0 auto 20px;
+      margin: 0 auto 15px;
       border: 3px dashed #c77734;
     }
     
     .toast-title {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: #1f2a3a;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
     
     .toast-text {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
+      font-size: 1rem;
+      margin-bottom: 15px;
       color: #4b5563;
     }
     
@@ -690,15 +689,15 @@
       display: inline-block;
       background: #2563eb;
       color: white;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      padding: 15px 40px;
+      padding: 10px 25px;
       border-radius: 60px;
       text-decoration: none;
       box-shadow: 0 15px 25px -8px #2563eb;
       border: 2px solid white;
       transition: 0.3s;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     
     .toast-phone:hover {
@@ -712,13 +711,13 @@
       background: transparent;
       border: 2px solid #c77734;
       color: #c77734;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      padding: 8px 25px;
+      padding: 6px 20px;
       border-radius: 40px;
       cursor: pointer;
       transition: 0.3s;
-      margin-top: 10px;
+      margin-top: 5px;
     }
     
     .toast-close:hover {
@@ -726,7 +725,7 @@
       color: white;
     }
     
-    /* ÇATI SORUNLARI BLOG - YENİ MAKALE BÖLÜMÜ */
+    /* ÇATI SORUNLARI BLOG */
     .articles-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -826,88 +825,6 @@
       font-size: 0.8rem;
     }
     
-    /* STRONG CTA BÖLÜMÜ */
-    .cta-section {
-      position: relative;
-      background: url('https://www.kamanroof.com/images/cati-tamircisi0.webp') center/cover no-repeat;
-      color: white;
-      text-align: center;
-    }
-
-    .cta-section::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.7);
-    }
-
-    .cta-content {
-      position:relative;
-      z-index:2;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .cta-content h2 {
-      color: white;
-      font-size: 3rem;
-      margin-bottom: 40px;
-    }
-    
-    .cta-content h2 span {
-      color: #c77734;
-      border-bottom-color: #c77734;
-    }
-
-    /* BÜYÜK TELEFON BUTONU */
-    .cta-big-phone {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      font-size: 2.5rem;
-      font-weight: 800;
-      padding: 25px 60px;
-      border-radius: 70px;
-      text-decoration: none;
-      box-shadow: 0 25px 40px -10px #2563eb;
-      border: 3px solid white;
-      transition: all 0.3s ease;
-      letter-spacing: 2px;
-      animation: cta-pulse 2.5s infinite;
-    }
-
-    .cta-big-phone i {
-      margin-right: 15px;
-      font-size: 3rem;
-      vertical-align: middle;
-    }
-
-    .cta-big-phone:hover {
-      background: white;
-      color: #2563eb;
-      border-color: #2563eb;
-      transform: scale(1.05) translateY(-5px);
-      box-shadow: 0 35px 50px -10px #2563eb;
-      animation: none;
-    }
-
-    @keyframes cta-pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
-      70% { box-shadow: 0 0 0 25px rgba(37, 99, 235, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
-    }
-
-    @media (max-width: 768px) {
-      .cta-big-phone {
-        font-size: 1.8rem;
-        padding: 20px 30px;
-      }
-      .cta-big-phone i {
-        font-size: 2.2rem;
-        margin-right: 10px;
-      }
-    }
-    
     /* İŞ SÜRECİ TIMELINE */
     .process-container {
       display: flex;
@@ -980,7 +897,7 @@
       font-size: 0.9rem;
     }
     
-    /* UZMANLIK ALANLARI (services-grid) */
+    /* UZMANLIK ALANLARI */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1025,7 +942,6 @@
       opacity: 0.25;
     }
     
-    /* Her kart için arkaplan görselleri - DÜZELTİLDİ */
     .service-card:nth-child(1)::before {
       background-image: url('https://www.kamanroof.com/images/cati-tamircisi4.webp');
     }
@@ -1041,11 +957,7 @@
     .service-card:nth-child(5)::before {
       background-image: url('https://www.kamanroof.com/images/yatay-oluk.webp');
     }
-    .service-card:nth-child(6)::before {
-      background-image: url('https://www.kamanroof.com/images/yatay-oluk.webp');
-    }
     
-    /* Telefon butonu - tıklanabilir kart içinde */
     .service-call-btn {
       display: none;
       margin-top: 15px;
@@ -1090,7 +1002,7 @@
       margin-bottom: 5px;
     }
     
-    /* NEDEN BİZ (why-grid) */
+    /* NEDEN BİZ */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1123,7 +1035,7 @@
       color: white;
     }
     
-    /* GALERİ - Lightbox (çarpı butonu KALDIRILDI) */
+    /* GALERİ - Lightbox (çarpı butonu YOK) */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1159,7 +1071,7 @@
       transform: scale(1.1);
     }
     
-    /* LIGHTBOX STYLES (çarpı butonu KALDIRILDI) */
+    /* LIGHTBOX STYLES (çarpı butonu YOK) */
     .lightbox {
       display: none;
       position: fixed;
@@ -1381,7 +1293,6 @@
       border: 0;
     }
     
-    /* responsive iletişim */
     @media (max-width: 768px) {
       .channel-value {
         font-size: 1.1rem;
@@ -1545,7 +1456,7 @@
     </a>
   </div>
 
-  <!-- PREMIUM TOAST BİLDİRİM (ilçeler için) -->
+  <!-- PREMIUM TOAST BİLDİRİM (ilçeler için) - KÜÇÜLTÜLDÜ -->
   <div class="district-toast" id="districtToast">
     <div class="toast-icon">
       <i class="fas fa-map-marker-alt"></i>
@@ -1560,7 +1471,7 @@
     </div>
   </div>
 
-  <!-- HERO with 3D - SOLA KAYDIRILDI -->
+  <!-- HERO with 3D -->
   <section class="hero" id="hero">
     <div id="canvas-container"></div>
     <div class="container hero-content">
@@ -1602,40 +1513,35 @@
     </div>
   </section>
 
-  <!-- 2. UZMANLIK ALANLARIMIZ (Görseller düzeltildi) -->
+  <!-- 2. UZMANLIK ALANLARIMIZ -->
   <section id="hizmetler">
     <div class="container">
       <h2 class="fade-left"><span>Uzmanlık</span> Alanlarımız</h2>
       <div class="services-grid" id="servicesGrid">
-        <!-- Kart 1: Çatı Kiremit Yenileme ve Aktarma -->
         <div class="service-card fade-up" data-service="1">
           <div class="service-icon"><i class="fas fa-home"></i></div>
           <h3>Çatı Kiremit Yenileme ve Aktarma</h3>
           <p>Eski kiremitleri söküp yenileriyle değiştirme, çatı aktarma işlemleri.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <!-- Kart 2: Dikey Yağmur İniş Borusu (görsel düzeltildi) -->
         <div class="service-card fade-up" data-service="2">
           <div class="service-icon"><i class="fas fa-arrow-down"></i></div>
           <h3>Dikey Yağmur İniş Borusu</h3>
           <p>Yağmur suyu tahliye sistemleri, iniş borusu montaj ve tamiri.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <!-- Kart 3: Kenetli Metal Kaplama -->
         <div class="service-card fade-up" data-service="3">
           <div class="service-icon"><i class="fas fa-layer-group"></i></div>
           <h3>Kenetli Metal Kaplama</h3>
           <p>Dayanıklı ve uzun ömürlü kenetli metal çatı kaplama sistemleri.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <!-- Kart 4: Dere ve Baca Kenarı -->
         <div class="service-card fade-up" data-service="4">
           <div class="service-icon"><i class="fas fa-border-all"></i></div>
           <h3>Dere ve Baca Kenarı</h3>
           <p>Çatı dereleri, baca etrafı sızdırmazlık ve yalıtım uygulamaları.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <!-- Kart 5: Yatay Oluk -->
         <div class="service-card fade-up" data-service="5">
           <div class="service-icon"><i class="fas fa-long-arrow-alt-down"></i></div>
           <h3>Yatay Oluk</h3>
@@ -1653,7 +1559,6 @@
       <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #4b5563; font-size: 1.2rem;">Ankara çatı ustası olarak 15 yıllık deneyimimizle, en sık karşılaşılan çatı problemlerini ve çözüm yollarını sizler için derledik.</p>
       
       <div class="articles-grid">
-        <!-- MAKALE 1: Çatı Akması -->
         <div class="article-card fade-up">
           <div class="article-image">
             <img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi3.webp" alt="Ankara çatı ustası - Çatı akması sorunu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
@@ -1667,7 +1572,6 @@
             </div>
           </div>
         </div>
-        <!-- MAKALE 2: Çatı Aktarma -->
         <div class="article-card fade-up">
           <div class="article-image">
             <img class="lazy" data-src="https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp" alt="Ankara çatı ustası - Çatı aktarma" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
@@ -1681,7 +1585,6 @@
             </div>
           </div>
         </div>
-        <!-- MAKALE 3: Metal Çatı -->
         <div class="article-card fade-up">
           <div class="article-image">
             <img class="lazy" data-src="https://www.kamanroof.com/images/kenetli-metal-kaplama.webp" alt="Ankara çatı ustası - Metal çatı kaplama" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
@@ -1695,7 +1598,6 @@
             </div>
           </div>
         </div>
-        <!-- MAKALE 4: Yağmur Oluğu -->
         <div class="article-card fade-up">
           <div class="article-image">
             <img class="lazy" data-src="https://www.kamanroof.com/images/yatay-oluk.webp" alt="Ankara çatı ustası - Yağmur oluğu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
@@ -1711,7 +1613,6 @@
         </div>
       </div>
 
-      <!-- MODERN BUTON -->
       <div class="modern-cta-button-container fade-up">
         <a href="tel:+905374110030" class="btn-modern-acil">
           <i class="fas fa-tools"></i> Çatınız mı akıyor? Hemen Arayın!
@@ -1748,21 +1649,21 @@
     </div>
   </section>
 
-  <!-- 5. SON PROJELER (Referanslar) - LIGHTBOX (çarpı butonu KALDIRILDI) -->
+  <!-- 5. SON PROJELER (Referanslar) - LIGHTBOX (çarpı butonu YOK) -->
   <section class="container" id="referanslar">
     <h2 class="fade-up"><span>Son</span> Projeler</h2>
     <div class="gallery-grid" id="galleryGrid">
       <div class="gallery-item fade-up" data-index="0">
-        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp" alt="çatı kiremit yenileme" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/ref1.webp" alt="çatı kiremit yenileme" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
       </div>
       <div class="gallery-item fade-up" data-index="1">
-        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi2.webp" alt="metal çatı kaplama" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/ref2.webp" alt="metal çatı kaplama" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
       </div>
       <div class="gallery-item fade-up" data-index="2">
-        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi3.webp" alt="yağmur oluğu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/ref3.webp" alt="yağmur oluğu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
       </div>
       <div class="gallery-item fade-up" data-index="3">
-        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi4.webp" alt="baca kenarı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/ref4.webp" alt="baca kenarı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
       </div>
     </div>
   </section>
@@ -1776,7 +1677,7 @@
     </div>
   </div>
 
-  <!-- 7. ANKARA'NIN TÜM İLÇELERİNDE HİZMET (PREMIUM TOAST EKLENDİ) -->
+  <!-- 7. ANKARA'NIN TÜM İLÇELERİNDE HİZMET -->
   <section id="ilceler">
     <div class="container">
       <h2 class="fade-left"><span>Ankara'nın Tüm</span> İlçelerinde Hizmet</h2>
@@ -1836,16 +1737,14 @@
     </div>
   </section>
 
-  <!-- 10. İLETİŞİM (YENİ TASARIM) -->
+  <!-- 10. İLETİŞİM -->
   <section id="iletisim">
     <div class="container">
       <h2 class="fade-left"><span>İletişim</span></h2>
       <div class="contact-modern fade-up">
-        <!-- Sol kart: iletişim kanalları -->
         <div class="contact-info-card">
           <div class="contact-greeting">📬 Bize Ulaşın</div>
           <div class="contact-channel-list">
-            <!-- Telefon -->
             <div class="contact-channel">
               <div class="channel-icon"><i class="fas fa-phone-alt"></i></div>
               <div class="channel-detail">
@@ -1853,7 +1752,6 @@
                 <div class="channel-value"><a href="tel:+905374110030">0537 411 00 30</a></div>
               </div>
             </div>
-            <!-- E-posta -->
             <div class="contact-channel">
               <div class="channel-icon"><i class="fas fa-envelope"></i></div>
               <div class="channel-detail">
@@ -1861,7 +1759,6 @@
                 <div class="channel-value"><a href="mailto:ercankaman3838@gmail.com">ercankaman3838@gmail.com</a></div>
               </div>
             </div>
-            <!-- Adres -->
             <div class="contact-channel">
               <div class="channel-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div class="channel-detail">
@@ -1869,7 +1766,6 @@
                 <div class="channel-value">Yeni Mahalle / Karşıyaka / Ankara</div>
               </div>
             </div>
-            <!-- Instagram -->
             <div class="contact-channel">
               <div class="channel-icon"><i class="fab fa-instagram"></i></div>
               <div class="channel-detail">
@@ -1877,7 +1773,6 @@
                 <div class="channel-value"><a href="https://www.instagram.com/kamanroof" target="_blank">@kamanroof</a></div>
               </div>
             </div>
-            <!-- Web -->
             <div class="contact-channel">
               <div class="channel-icon"><i class="fas fa-globe"></i></div>
               <div class="channel-detail">
@@ -1887,7 +1782,6 @@
             </div>
           </div>
         </div>
-        <!-- Sağ tarafta harita -->
         <div class="map-modern">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.784089104711!2d32.82546931581175!3d39.92589047942448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f55b9b1b1b1%3A0x6e8c5d6c6e8c5d6c!2sKar%C5%9F%C4%B1yaka%2C%20Ankara!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
@@ -1906,9 +1800,7 @@
     import { OrbitControls } from 'https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js';
 
     const container = document.getElementById('canvas-container');
-    if (!container) {
-      console.warn('Canvas container bulunamadı!');
-    } else {
+    if (container) {
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0x0b1a2a);
       
@@ -2045,7 +1937,7 @@
       overlay.addEventListener('click', closeMenu);
       document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', closeMenu));
 
-      // Uzmanlık alanları kartlarına tıklama olayı
+      // Uzmanlık alanları kartları
       const serviceCards = document.querySelectorAll('.service-card');
       serviceCards.forEach(card => {
         card.addEventListener('click', function(e) {
@@ -2090,7 +1982,7 @@
         if (rect.top < window.innerHeight - 100) animateStats();
       });
 
-      // Lightbox (çarpı butonu kaldırıldı)
+      // Lightbox (çarpı butonu yok)
       const galleryItems = document.querySelectorAll('.gallery-item');
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightboxImg');
@@ -2151,15 +2043,12 @@
       // PREMIUM TOAST BİLDİRİM (ilçeler için)
       const districtToast = document.getElementById('districtToast');
       const toastDistrictTitle = document.getElementById('toastDistrictTitle');
-      const toastDistrictText = document.getElementById('toastDistrictText');
-      const toastPhone = document.getElementById('toastPhone');
       const toastClose = document.getElementById('toastClose');
       
       const districtLinks = document.querySelectorAll('.district-link');
       
       function showDistrictToast(district) {
         toastDistrictTitle.textContent = district;
-        // Telefon numarası zaten sabit
         districtToast.classList.add('active');
       }
       
@@ -2175,7 +2064,6 @@
         districtToast.classList.remove('active');
       });
       
-      // Toast dışına tıklayınca kapanma (opsiyonel)
       districtToast.addEventListener('click', (e) => {
         if (e.target === districtToast) {
           districtToast.classList.remove('active');
