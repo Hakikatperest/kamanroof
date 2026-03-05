@@ -1990,12 +1990,6 @@
       const lightboxNext = document.getElementById('lightboxNext');
       
       let currentIndex = 0;
-      const images = [
-        'https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp',
-        'https://www.kamanroof.com/images/cati-tamircisi2.webp',
-        'https://www.kamanroof.com/images/cati-tamircisi3.webp',
-        'https://www.kamanroof.com/images/cati-tamircisi4.webp'
-      ];
 
       function openLightbox(index) {
         currentIndex = index;
@@ -2019,9 +2013,14 @@
         lightboxImg.src = images[currentIndex];
       }
 
-      galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => openLightbox(index));
-      });
+      galleryItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector("img");
+    lightboxImg.src = img.dataset.src || img.src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
 
       lightboxNext.addEventListener('click', nextImage);
       lightboxPrev.addEventListener('click', prevImage);
