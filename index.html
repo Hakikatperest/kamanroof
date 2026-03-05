@@ -406,7 +406,7 @@
       visibility: visible;
     }
     
-    /* HERO - 3D Canvas ile */
+    /* HERO - 3D Canvas ile - SOLA KAYDIRILDI */
     .hero {
       background: linear-gradient(95deg, #0b1a2a 0%, #1f2a3a 80%);
       position: relative;
@@ -442,10 +442,11 @@
       width: 100%;
     }
     
+    /* SOLA KAYDIRMA İÇİN margin-left: 0, margin-right: auto */
     @media (min-width: 992px) {
       .hero-content {
-        margin-left: auto;
-        margin-right: 5%;
+        margin-left: 0;
+        margin-right: auto;
       }
     }
     
@@ -883,7 +884,7 @@
       font-size: 0.9rem;
     }
     
-    /* UZMANLIK ALANLARI (services-grid) - YENİ ÇATI KİREMİT KARTI EKLENDİ */
+    /* UZMANLIK ALANLARI (services-grid) */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -928,7 +929,7 @@
       opacity: 0.25;
     }
     
-    /* Her kart için arkaplan görselleri */
+    /* Her kart için arkaplan görselleri - DÜZELTİLDİ */
     .service-card:nth-child(1)::before {
       background-image: url('https://www.kamanroof.com/images/cati-tamircisi4.webp');
     }
@@ -1026,6 +1027,7 @@
       color: white;
     }
     
+    /* GALERİ - Lightbox eklendi */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1043,6 +1045,7 @@
       transition: 0.2s;
       aspect-ratio: 1/0.9;
       overflow: hidden;
+      cursor: pointer;
     }
     
     .gallery-item:hover {
@@ -1058,6 +1061,111 @@
     
     .gallery-item:hover img {
       transform: scale(1.1);
+    }
+    
+    /* LIGHTBOX STYLES */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    .lightbox-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border: 4px solid white;
+      border-radius: 8px;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 40px;
+      height: 40px;
+      background: #c77734;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      z-index: 10000;
+    }
+    
+    .lightbox-close:hover {
+      background: #b55e1f;
+      transform: rotate(90deg);
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: #c77734;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+    
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: #b55e1f;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .lightbox-prev {
+      left: -60px;
+    }
+    
+    .lightbox-next {
+      right: -60px;
+    }
+    
+    @media (max-width: 768px) {
+      .lightbox-prev {
+        left: -30px;
+      }
+      .lightbox-next {
+        right: -30px;
+      }
+      .lightbox-close {
+        top: -30px;
+        right: -30px;
+      }
     }
     
     /* YENİ İLETİŞİM TASARIMI */
@@ -1372,7 +1480,7 @@
     </a>
   </div>
 
-  <!-- HERO with 3D -->
+  <!-- HERO with 3D - SOLA KAYDIRILDI -->
   <section class="hero" id="hero">
     <div id="canvas-container"></div>
     <div class="container hero-content">
@@ -1414,37 +1522,40 @@
     </div>
   </section>
 
-  <!-- 2. UZMANLIK ALANLARIMIZ (Yeni kart eklendi ve tıklanabilir buton) -->
+  <!-- 2. UZMANLIK ALANLARIMIZ (Görseller düzeltildi) -->
   <section id="hizmetler">
     <div class="container">
       <h2 class="fade-left"><span>Uzmanlık</span> Alanlarımız</h2>
       <div class="services-grid" id="servicesGrid">
-        <!-- Yeni kart: Çatı Kiremit Yenileme ve Aktarma -->
+        <!-- Kart 1: Çatı Kiremit Yenileme ve Aktarma -->
         <div class="service-card fade-up" data-service="1">
           <div class="service-icon"><i class="fas fa-home"></i></div>
           <h3>Çatı Kiremit Yenileme ve Aktarma</h3>
           <p>Eski kiremitleri söküp yenileriyle değiştirme, çatı aktarma işlemleri.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
-        <!-- Mevcut kartlar -->
+        <!-- Kart 2: Dikey Yağmur İniş Borusu (görsel düzeltildi) -->
         <div class="service-card fade-up" data-service="2">
           <div class="service-icon"><i class="fas fa-arrow-down"></i></div>
           <h3>Dikey Yağmur İniş Borusu</h3>
           <p>Yağmur suyu tahliye sistemleri, iniş borusu montaj ve tamiri.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
+        <!-- Kart 3: Kenetli Metal Kaplama -->
         <div class="service-card fade-up" data-service="3">
           <div class="service-icon"><i class="fas fa-layer-group"></i></div>
           <h3>Kenetli Metal Kaplama</h3>
           <p>Dayanıklı ve uzun ömürlü kenetli metal çatı kaplama sistemleri.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
+        <!-- Kart 4: Dere ve Baca Kenarı -->
         <div class="service-card fade-up" data-service="4">
           <div class="service-icon"><i class="fas fa-border-all"></i></div>
           <h3>Dere ve Baca Kenarı</h3>
           <p>Çatı dereleri, baca etrafı sızdırmazlık ve yalıtım uygulamaları.</p>
           <a href="tel:+905374110030" class="service-call-btn"><i class="fas fa-phone-alt"></i> 0537 411 00 30</a>
         </div>
+        <!-- Kart 5: Yatay Oluk -->
         <div class="service-card fade-up" data-service="5">
           <div class="service-icon"><i class="fas fa-long-arrow-alt-down"></i></div>
           <h3>Yatay Oluk</h3>
@@ -1520,7 +1631,7 @@
         </div>
       </div>
 
-      <!-- TAŞINAN VE YENİLENEN BUTON -->
+      <!-- MODERN BUTON -->
       <div class="modern-cta-button-container fade-up">
         <a href="tel:+905374110030" class="btn-modern-acil">
           <i class="fas fa-tools"></i> Çatınız mı akıyor? Hemen Arayın!
@@ -1557,16 +1668,34 @@
     </div>
   </section>
 
-  <!-- 5. SON PROJELER (Referanslar) -->
+  <!-- 5. SON PROJELER (Referanslar) - LIGHTBOX EKLENDİ -->
   <section class="container" id="referanslar">
     <h2 class="fade-up"><span>Son</span> Projeler</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp" alt="çatı kiremit yenileme" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi2.webp" alt="metal çatı kaplama" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi3.webp" alt="yağmur oluğu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
-      <div class="gallery-item fade-up"><img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi4.webp" alt="baca kenarı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E"></div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item fade-up" data-index="0">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp" alt="çatı kiremit yenileme" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+      </div>
+      <div class="gallery-item fade-up" data-index="1">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi2.webp" alt="metal çatı kaplama" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+      </div>
+      <div class="gallery-item fade-up" data-index="2">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi3.webp" alt="yağmur oluğu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+      </div>
+      <div class="gallery-item fade-up" data-index="3">
+        <img class="lazy" data-src="https://www.kamanroof.com/images/cati-tamircisi4.webp" alt="baca kenarı" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232d3c4c'/%3E%3C/svg%3E">
+      </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+      <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+      <img id="lightboxImg" src="" alt="Büyük Görsel">
+      <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
 
   <!-- 7. ANKARA'NIN TÜM İLÇELERİNDE HİZMET -->
   <section id="ilceler">
@@ -1827,6 +1956,7 @@
 
   <script>
     (function() {
+      // Menu
       const menuToggle = document.getElementById('menuToggle');
       const navMenu = document.getElementById('navMenu');
       const overlay = document.getElementById('overlay');
@@ -1836,28 +1966,24 @@
       overlay.addEventListener('click', closeMenu);
       document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', closeMenu));
 
-      // Uzmanlık alanları kartlarına tıklama olayı - telefon butonu göster
+      // Uzmanlık alanları kartlarına tıklama olayı
       const serviceCards = document.querySelectorAll('.service-card');
       serviceCards.forEach(card => {
         card.addEventListener('click', function(e) {
-          // Tıklanan eleman butonun kendisi değilse (butona tıklandığında active ekleme/çıkarma yapma)
           if (!e.target.closest('.service-call-btn')) {
-            // Aktif kartı kapat (diğerlerini kapat)
             serviceCards.forEach(c => c.classList.remove('active'));
-            // Bu kartı aktif yap
             this.classList.add('active');
           }
-          // Butona tıklandığında normal link çalışsın
         });
       });
 
-      // Dökümanın herhangi bir yerine tıklandığında kartları kapat (opsiyonel)
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.service-card')) {
           serviceCards.forEach(c => c.classList.remove('active'));
         }
       });
 
+      // İstatistik animasyonu
       const statNumbers = document.querySelectorAll('.stat-number');
       const statsSection = document.getElementById('istatistikler');
       let animated = false;
@@ -1883,6 +2009,66 @@
       window.addEventListener('scroll', () => {
         const rect = statsSection.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) animateStats();
+      });
+
+      // Lightbox
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
+      const lightboxPrev = document.getElementById('lightboxPrev');
+      const lightboxNext = document.getElementById('lightboxNext');
+      
+      let currentIndex = 0;
+      const images = [
+        'https://www.kamanroof.com/images/cati-kremit-yenileme-ve-aktarma.webp',
+        'https://www.kamanroof.com/images/cati-tamircisi2.webp',
+        'https://www.kamanroof.com/images/cati-tamircisi3.webp',
+        'https://www.kamanroof.com/images/cati-tamircisi4.webp'
+      ];
+
+      function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex];
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex];
+      }
+
+      galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => openLightbox(index));
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightboxNext.addEventListener('click', nextImage);
+      lightboxPrev.addEventListener('click', prevImage);
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('active')) {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowRight') nextImage();
+          if (e.key === 'ArrowLeft') prevImage();
+        }
       });
 
       // Lazy load
